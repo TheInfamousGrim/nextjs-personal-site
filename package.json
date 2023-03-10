@@ -1,0 +1,25 @@
+{
+  "name": "nextjs-personal-site",
+  "version": "1.0.0",
+  "description": "My personal nextjs 13 site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheInfamousGrim/nextjs-personal-site.git"
+  },
+  "author": "George Fincher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheInfamousGrim/nextjs-personal-site/issues"
+  },
+  "homepage": "https://github.com/TheInfamousGrim/nextjs-personal-site#readme",
+  "dependencies": {
+    "eslint-config-next": "^13.2.4",
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
