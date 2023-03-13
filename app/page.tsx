@@ -1,31 +1,25 @@
+// Dependencies
 import { HTMLAttributes, ReactNode } from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import clsx from 'clsx';
+import { Metadata } from 'next';
 
+// Components
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
+import HeroCard from '@/components/HeroCard';
 import {
   GitHubIcon,
   LinkedInIcon,
   TwitterIcon,
 } from '../components/SocialIcons';
-import logoAirbnb from '@/public/logos/airbnb.svg';
-import logoFacebook from '@/public/logos/facebook.svg';
-import logoPlanetaria from '@/public/logos/planetaria.svg';
-import logoStarbucks from '@/public/logos/starbucks.svg';
+
+// Logos
 import logoAAndF from '../public/logos/A&F.svg';
 import logoKomo from '../public/logos/komo.svg';
 import logoUOB from '../public/logos/university-of-birmingham.svg';
 import logoGSA from '../public/logos/gsa.svg';
 import logoUOE from '../public/logos/university-of-exeter.svg';
-import image1 from '@/public/photos/image-1.jpg';
-import image2 from '@/public/photos/image-2.jpg';
-import image3 from '@/public/photos/image-3.jpg';
-import image4 from '@/public/photos/image-4.jpg';
-import image5 from '@/public/photos/image-5.jpg';
-import { formatDate } from '@/lib/formatDate';
 
 interface IconProps {
   className?: string;
@@ -299,56 +293,15 @@ function Education() {
   );
 }
 
-function Photos() {
-  let rotations = [
-    'rotate-2',
-    '-rotate-2',
-    'rotate-2',
-    'rotate-2',
-    '-rotate-2',
-  ];
-
-  return (
-    <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+export const metadata: Metadata = {
+  title: 'Home',
+  description:
+    'George Fincher, a fullstack web developer specializing in React and Next.js applications, based in Birmingham, UK.',
+};
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>
-          George Fincher - Software designer, founder, and amateur astronaut
-        </title>
-        <meta
-          name="description"
-          content="I’m George Fincher, a fullstack web developer specializing in React
-            and Next.js applications, based in Birmingham, UK. I’m a Junior IT
-            Executive at Aston & Fincher, where I design, develop and implement
-            our internal IT infrastructure and integrate software that serves
-            barbers, hairdressers and beauticians with the products they need
-            across the UK."
-        />
-      </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
@@ -382,7 +335,9 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Photos />
+      <Container className="mt-9">
+        <HeroCard />
+      </Container>
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <Education />

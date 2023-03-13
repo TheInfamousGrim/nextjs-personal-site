@@ -1,3 +1,99 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --border: rgb(0, 255, 171);
+
+  --g1: rgb(0, 255, 171);
+  --g2: rgb(252, 53, 109);
+  --g3: rgb(254, 204, 78);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                           Animated Card Homepage                           */
+/* -------------------------------------------------------------------------- */
+
+.card {
+  border: 0.5vmin solid var(--border);
+}
+
+.card:hover:before {
+  background-position: 100% 100%;
+  transform: scale(1.03, 1.03);
+}
+
+.card:hover > .overflow-hidden > .card-content {
+  background-position: -10% 0%;
+}
+
+.card:hover > .overflow-hidden > .card-icon {
+  color: white;
+}
+
+.card:hover
+  > .overflow-hidden
+  > .card-content
+  > .card-subtitle
+  > .card-subtitle-word {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: opacity 0ms, transform 200ms cubic-bezier(0.9, 0.06, 0.15, 0.9);
+}
+
+.card:before {
+  background: linear-gradient(
+    130deg,
+    transparent 0% 33%,
+    var(--g1) 66%,
+    var(--g2) 83.5%,
+    var(--g3) 100%
+  );
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  content: '';
+  height: 103%;
+  left: 0px;
+  pointer-events: none;
+  position: absolute;
+  top: -7px;
+  transition: all 350ms ease;
+  width: 100%;
+  z-index: 1;
+  border-radius: 0.5rem;
+}
+
+.card-content {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.2) 8%,
+    transparent 8%
+  );
+  background-position: 0% 0%;
+  background-size: 5vmin 5vmin;
+  height: 100%;
+  padding: 10vmin;
+  position: relative;
+  transition: background-position 350ms ease;
+  width: calc(100% + 10vmin);
+  z-index: 2;
+}
+
+.card-subtitle-word {
+  display: inline-block;
+  margin: 0vmin 0.3vmin;
+  opacity: 0;
+  position: relative;
+  transform: translateY(40%);
+  transition: none;
+}
+
+.card-icon {
+  bottom: 0px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 7vmin;
+  left: 0px;
+  margin: 5vmin;
+  position: absolute;
+  transition: color 250ms ease;
+  z-index: 2;
+}
