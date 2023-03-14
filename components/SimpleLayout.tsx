@@ -1,15 +1,14 @@
 import { Container } from '@/components/Container';
-import { ReactNode } from 'react';
+import { ReactNode, ComponentPropsWithoutRef } from 'react';
 
-export function SimpleLayout({
-  title,
-  intro,
-  children,
-}: {
+export interface SimpleLayoutTypes extends ComponentPropsWithoutRef<'div'> {
   title: string;
   intro: string;
+  className: string;
   children: ReactNode;
-}) {
+}
+
+export function SimpleLayout({ title, intro, children }: SimpleLayoutTypes) {
   return (
     <Container className="mt-16 sm:mt-32">
       <header className="max-w-2xl">
