@@ -1,4 +1,8 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 
 import { Container } from '@/components/Container';
 import { ReactNode } from 'react';
@@ -9,10 +13,15 @@ interface NavLinkProps {
 }
 
 function NavLink({ href, children }: NavLinkProps) {
+  let isActive = usePathname() === href;
+
   return (
     <Link
       href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+      className={clsx(
+        'transition',
+        isActive ? 'text-aquamarine' : 'hover:text-aquamarine'
+      )}
     >
       {children}
     </Link>
