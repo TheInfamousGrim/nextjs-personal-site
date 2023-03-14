@@ -20,6 +20,7 @@ import logoKomo from '../public/logos/komo.svg';
 import logoUOB from '../public/logos/university-of-birmingham.svg';
 import logoGSA from '../public/logos/gsa.svg';
 import logoUOE from '../public/logos/university-of-exeter.svg';
+import logoBuckland from '../public/logos/west-buckland.svg';
 
 interface IconProps {
   className?: string;
@@ -123,12 +124,9 @@ function SocialLink({
   );
 }
 
-function Newsletter() {
+function GetInContact() {
   return (
-    <form
-      action="/thank-you"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
+    <form action="/thank-you" className="rounded-2xl border border-sunglow p-6">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Get In Contact</span>
@@ -144,9 +142,12 @@ function Newsletter() {
           required
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
         />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
-        </Button>
+        <Button
+          variant="secondary"
+          text="join"
+          type="button"
+          className="ml-4 flex-none"
+        ></Button>
       </div>
     </form>
   );
@@ -174,7 +175,7 @@ function Resume() {
   ];
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <div className="rounded-2xl border border-bright-pink p-6 ">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
@@ -213,10 +214,12 @@ function Resume() {
         href="https://docs.google.com/document/d/1tEmQaS4c8bL4XMCJ6XHtqHHp7zL62VOazIOmlQnm618/edit"
         variant="secondary"
         className="group mt-6 w-full"
-      >
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+        text="Download CV"
+        icon={ArrowDownIcon({
+          className:
+            'h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50',
+        })}
+      ></Button>
     </div>
   );
 }
@@ -247,10 +250,18 @@ function Education() {
       start: '2014',
       end: '2018',
     },
+    {
+      school: 'West Buckland',
+      course: 'Physics | Mathematics & Mechanics | Chemistry',
+      grade: 'A* | A | A',
+      logo: logoBuckland,
+      start: '2005',
+      end: '2014',
+    },
   ];
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <div className="rounded-2xl border border-aquamarine p-6">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <AcademicCap className="h-6 w-6 flex-none" />
         <span className="ml-3">Education</span>
@@ -342,7 +353,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <Education />
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            <GetInContact />
             <Resume />
           </div>
         </div>

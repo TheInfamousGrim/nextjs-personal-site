@@ -5,7 +5,21 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
+    extend: {
+      colors: {
+        'amaranth-pink': 'e89cb7',
+        'space-cadet': '#312b5d',
+        crayola: '#fb6a82',
+        aquamarine: '#00ffab',
+        sunglow: '#fecc4e',
+        'rich-black': '#070013',
+        'dark-violet': '#8b25c9',
+        'bright-pink': '#fc356d'
+
+      }
+    },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
       sm: ['0.875rem', { lineHeight: '1.5rem' }],
@@ -303,6 +317,7 @@ module.exports = {
     }),
   },
   plugins: [
-    require('@tailwindcss/forms')
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography')
   ],
 }

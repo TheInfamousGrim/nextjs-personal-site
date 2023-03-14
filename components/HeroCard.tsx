@@ -16,6 +16,7 @@ export default function HeroCard() {
   function createWord(text: string, index: number) {
     return (
       <span
+        key={index}
         className="card-subtitle-word"
         style={{ transitionDelay: `${index * 40}ms` }}
       >
@@ -46,7 +47,7 @@ export default function HeroCard() {
         <div className="h-full overflow-hidden">
           <div className="card-content">
             <h3 className="text-4xl font-semibold text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I can synthesize the most sumptuous s**t
+              I can synthesize the most sumptuous delights
             </h3>
             <h4 className="card-subtitle mt-2 text-3xl text-zinc-100 sm:text-4xl">
               {createSubtitle(subtitle)}

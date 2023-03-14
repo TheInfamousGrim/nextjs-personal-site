@@ -1,5 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import clsx from 'clsx';
+import motion from 'framer-motion';
+import { ReactNode, useRef, useEffect } from 'react';
+
+// Custom Css
+import styles from './Button.module.css';
 
 export interface VariantStyleTypes {
   primary: string;
@@ -17,23 +24,77 @@ export interface ButtonTypes {
   variant?: string;
   className?: string;
   href?: string;
+  text?: string;
+  icon?: ReactNode;
+  type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
 export function Button({
   variant = 'primary',
   className,
   href,
+  text,
+  icon,
+  type,
   ...props
 }: ButtonTypes) {
+  const glowEffect = styles['glow-effect'];
   className = clsx(
     'inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none',
+    glowEffect,
     variantStyles[variant as keyof VariantStyleTypes],
     className
   );
 
+  // Get a reference of the buttons computed styles
+  let buttonRef = useRef<HTMLAnchorElement | HTMLButtonElement>(null!);
+
+  useEffect(() => {
+    // Get the curr
+    const buttonStyles =
+      buttonRef.current && getComputedStyle(buttonRef.current);
+
+    const glowLines = buttonRef.current.querySelectorAll('rect');
+    const rx = buttonStyles.borderRadius;
+
+    glowLines.forEach((line) => {
+      line.setAttribute('rx', rx);
+    });
+  }, []);
+
   return href ? (
-    <Link href={href} className={className} {...props} />
+    <Link ref={buttonRef} href={href} className={className} {...props}>
+      {text}
+      {icon}
+      <svg className={styles['glow-container']} data-glow-offset={true}>
+        <rect
+          pathLength={100}
+          strokeLinecap="round"
+          className={styles['glow-blur']}
+        ></rect>
+        <rect
+          pathLength={100}
+          strokeLinecap="round"
+          className={styles['glow-line']}
+        ></rect>
+      </svg>
+    </Link>
   ) : (
-    <button className={className} {...props} />
+    <button ref={buttonRef} className={className} type={type} {...props}>
+      {text}
+      {icon}
+      <svg className={styles['glow-container']} data-glow-offset={true}>
+        <rect
+          pathLength={100}
+          strokeLinecap="round"
+          className={styles['glow-blur']}
+        ></rect>
+        <rect
+          pathLength={100}
+          strokeLinecap="round"
+          className={styles['glow-line']}
+        ></rect>
+      </svg>
+    </button>
   );
 }

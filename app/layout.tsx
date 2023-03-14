@@ -8,7 +8,6 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 // theme Script
-import { themeScript } from '@/lib/themeScript';
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
@@ -61,7 +60,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script dangerouslySetInnerHTML={{ __html: modeScript }} />
+        <Script
+          id="set-theme"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: modeScript }}
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
