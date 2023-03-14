@@ -22,16 +22,13 @@ function ToolsSection({ children, ...props }: ToolsSectionTypes) {
 
 interface ToolTypes {
   title: string;
-  href: string;
   children: ReactNode;
 }
 
-function Tool({ title, href, children }: ToolTypes) {
+function Tool({ title, children }: ToolTypes) {
   return (
     <Card as="li">
-      <Card.Title as="h3" href={href}>
-        {title}
-      </Card.Title>
+      <Card.Title as="h3">{title}</Card.Title>
       <Card.Description>{children}</Card.Description>
     </Card>
   );

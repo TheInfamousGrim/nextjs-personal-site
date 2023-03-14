@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'amaranth-pink': 'e89cb7',
+        'amaranth-pink': '#e89cb7',
         'space-cadet': '#312b5d',
         crayola: '#fb6a82',
         aquamarine: '#00ffab',
