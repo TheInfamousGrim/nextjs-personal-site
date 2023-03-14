@@ -1,7 +1,7 @@
-import { forwardRef, ReactNode } from 'react';
+import { forwardRef, ReactNode, ComponentPropsWithRef } from 'react';
 import clsx from 'clsx';
 
-interface SubContainerProps {
+interface SubContainerProps extends ComponentPropsWithRef<'div'> {
   className?: string;
   style?: React.CSSProperties;
   children: ReactNode;
@@ -33,7 +33,7 @@ const InnerContainer = forwardRef<Ref, SubContainerProps>(
   }
 );
 
-export interface ContainerProps {
+export interface ContainerProps extends ComponentPropsWithRef<'div'> {
   className?: string;
   style?: React.CSSProperties;
 }
