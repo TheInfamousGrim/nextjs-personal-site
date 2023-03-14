@@ -4,7 +4,7 @@ import { ReactNode, ComponentPropsWithoutRef } from 'react';
 export interface SimpleLayoutTypes extends ComponentPropsWithoutRef<'div'> {
   title: string;
   intro: string;
-  className: string;
+  className?: string;
   children: ReactNode;
 }
 

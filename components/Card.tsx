@@ -66,9 +66,9 @@ Card.Title = function CardTitle({
   href,
   children,
 }: {
-  Component: ReactNode;
-  href: string;
   children: ReactNode;
+  Component: string;
+  href: string;
 }) {
   return (
     <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
