@@ -144,7 +144,6 @@ function MobileNavigation(props: IconProps) {
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/Experience">Experience</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/speaking">Speaking</MobileNavItem>
                 <MobileNavItem href="/uses">Uses</MobileNavItem>
               </ul>
             </nav>
@@ -183,7 +182,6 @@ function DesktopNavigation(props: IconProps) {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/experience">Experience</NavItem>
         <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/speaking">Speaking</NavItem>
         <NavItem href="/uses">Uses</NavItem>
       </ul>
     </nav>

@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import clsx from 'clsx';
-import { ReactNode, ComponentPropsWithoutRef } from 'react';
+import {
+  ReactNode,
+  ComponentPropsWithoutRef,
+  JSXElementConstructor,
+} from 'react';
 
 interface IconPropsTypes extends ComponentPropsWithoutRef<'svg'> {
   className?: string;
@@ -24,8 +28,8 @@ export function Card({
   className,
   children,
 }: {
-  Component: ReactNode;
-  className: string;
+  Component: string;
+  className?: string;
   children: ReactNode;
 }) {
   return (
@@ -66,7 +70,7 @@ Card.Title = function CardTitle({
   href,
   children,
 }: {
-  children: ReactNode;
+  children: string;
   Component: string;
   href: string;
 }) {
@@ -108,7 +112,7 @@ Card.Eyebrow = function CardEyebrow({
   children,
   ...props
 }: {
-  Component: ReactNode;
+  Component: string;
   decorate: boolean;
   className: string;
   children: ReactNode;
