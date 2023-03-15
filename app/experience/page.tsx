@@ -138,10 +138,11 @@ function Experience() {
       <Container className="mt-16 sm:mt-32">
         <motion.div className="max-w-2xl" variants={textVariant()}>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Work Experience: All the Lessons I Have Learned so Far
+            All the Cool Stuff I've Learned along the way
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Some more details on the jobs and education I have received.
+            A few more snippets about my education and how much I've picked up
+            along the way .
           </p>
         </motion.div>
       </Container>
@@ -158,7 +159,7 @@ function Experience() {
       <Container className="mt-16">
         <motion.div className="maz-w-2xl" variants={textVariant()}>
           <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
-            All the Juicy Languages, Frameworks and Software Tech I Use
+            Some of the Juicy Languages, Frameworks and Software I Use
           </h2>
         </motion.div>
         <Tech />

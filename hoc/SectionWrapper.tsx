@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { JSXElementConstructor, ReactNode } from 'react';
 
 import { styles } from '@/lib/styles';
 import { staggerContainer } from '@/lib/motion';
 
-const StarWrapper = (Component: ReactNode, idName: string) =>
+const StarWrapper = (Component: JSXElementConstructor<any>, idName: string) =>
   function HOC() {
     return (
       <motion.section

@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -18,7 +19,13 @@ module.exports = {
         'dark-violet': '#8b25c9',
         'bright-pink': '#fc356d'
 
-      }
+      },
+      backgroundImage: {
+        topography: "url(../public/patterns/topography.svg)"
+      },
+      screens: {
+        'tablet': '720px',
+      },
     },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
@@ -318,6 +325,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('@tailwindcss/typography')
+    require('@tailwindcss/typography'),
   ],
 }

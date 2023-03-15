@@ -2,14 +2,164 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 import { Card } from '@/components/Card';
+import ProjectCard from '@/components/ProjectCard';
 import { SimpleLayout } from '@/components/SimpleLayout';
 
-import logoOpenShuttle from '@/public/logos/open-shuttle.svg';
+/* --------------------------- Logos for projects --------------------------- */
 import logoCumulo from '@/public/logos/cumulo.svg';
 import logoEcommerceDatabase from '@/public/logos/ecommerce-database.svg';
 import logoFakebook from '@/public/logos/fakebook.svg';
 import logoMongoSocialAPI from '@/public/logos/mongo-social-api.svg';
 import logoTenzie from '@/public/logos/tenzie.svg';
+
+/* --------------------------- images for projects -------------------------- */
+import screenshotCumulo from '@/public/assets/projects/cumulo.png';
+import screenshotEcommerceDatabase from '@/public/assets/projects/api-ecommerce.png';
+import screenshotFakebook from '@/public/assets/projects/fakebook.png';
+import screenshotMongoSocialAPI from '@/public/assets/projects/social-network.png';
+import screenshotTenzie from '@/public/assets/projects/tenzies.png';
+
+import { projectsTest } from '@/lib/constants';
+
+const projectsTest2 = [
+  {
+    name: 'Fakebook',
+    description:
+      'A facebook clone I was project lead on for my fullstack web development course. A full MERN stack application made with a graphQL API.',
+    tags: [
+      {
+        name: 'React',
+        color: 'text-aquamarine',
+      },
+      {
+        name: 'Express',
+        color: 'text-emerald-500',
+      },
+      {
+        name: 'GraphQL',
+        color: 'text-bright-pink',
+      },
+      {
+        name: 'Apollo',
+        color: 'text-indigo-500',
+      },
+      {
+        name: 'MongoDB',
+        color: 'text-green-600',
+      },
+      {
+        name: 'Tailwind',
+        color: 'text-sky-500',
+      },
+    ],
+    image: screenshotFakebook,
+    logo: logoFakebook,
+    sourceCodeLink: 'https://github.com/TheInfamousGrim/Fakebook',
+  },
+  {
+    name: 'Tenzie Game',
+    description:
+      'A fun game of tenzies I made with ReactJS 🎲. This is where I was whetting my whistle with framer motion and making something with a fair bit of React logic.',
+    tags: [
+      {
+        name: 'React',
+        color: 'text-aquamarine',
+      },
+      {
+        name: 'Vite',
+        color: 'text-indigo-500',
+      },
+      {
+        name: 'Tailwind',
+        color: 'text-sky-500',
+      },
+      {
+        name: 'Framermotion',
+        color: 'text-fuchsia-500',
+      },
+    ],
+    image: screenshotTenzie,
+    logo: logoTenzie,
+    sourceCodeLink: 'https://github.com/TheInfamousGrim/Tenzies-Game-React',
+  },
+  {
+    name: 'MongoDB Social Network API',
+    description:
+      'A groovy lil API for a social network web application where users can share their thoughts, react to friends thoughts, and create a friend list.',
+    tags: [
+      {
+        name: 'nodejs',
+        color: 'text-emerald-500',
+      },
+      {
+        name: 'MongoDB',
+        color: 'text-green-500',
+      },
+      {
+        name: 'mongoose',
+        color: 'text-rose-600',
+      },
+      {
+        name: 'Express',
+        color: 'text-green-500',
+      },
+    ],
+    image: screenshotMongoSocialAPI,
+    logo: logoMongoSocialAPI,
+    sourceCodeLink:
+      'https://github.com/TheInfamousGrim/NoSQL-Social-Network-API',
+  },
+  {
+    name: 'Ecommerce Server',
+    description:
+      'A complete backend server for an ecommerce store. I actually enjoyed this one a lot, building a pretty awesome backend that used Sequelize as the ORM.',
+    tags: [
+      {
+        name: 'nodejs',
+        color: 'text-emerald-500',
+      },
+      {
+        name: 'Express',
+        color: 'text-green-500',
+      },
+      {
+        name: 'MySQL',
+        color: 'text-cyan-600',
+      },
+      {
+        name: 'Sequelize',
+        color: 'text-aquamarine',
+      },
+    ],
+    image: screenshotEcommerceDatabase,
+    logo: logoEcommerceDatabase,
+    sourceCodeLink:
+      'https://github.com/TheInfamousGrim/orm-e-commerce-back-end',
+  },
+  {
+    name: 'Cumulo',
+    description:
+      'A neat weather dashboard to show the weather in your location as well as one that is searched. An earlier project of mine that was when I was first getting the hang of working with APIs in JavaScript.',
+    tags: [
+      {
+        name: 'JavaScript',
+        color: 'text-sunglow',
+      },
+      {
+        name: 'Materialize',
+        color: 'text-crayola',
+      },
+      {
+        name: 'jQuery',
+        color: 'text-aquamarine',
+      },
+    ],
+    image: screenshotCumulo,
+    logo: logoCumulo,
+    sourceCodeLink:
+      'https://github.com/TheInfamousGrim/cumulo-weather-dashboard',
+  },
+];
 
 const projects = [
   {
@@ -33,7 +183,7 @@ const projects = [
   {
     name: 'Mongo Social Network API',
     description:
-      'A groovy lil API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list..',
+      'A groovy lil API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.',
     link: {
       href: 'https://github.com/TheInfamousGrim/NoSQL-Social-Network-API',
       label: 'github.com',
@@ -42,7 +192,7 @@ const projects = [
   },
   {
     name: 'Ecommerce Server',
-    description: 'A complete backend server for an exommerce store',
+    description: 'A complete backend server for an ecommerce store',
     link: {
       href: 'https://github.com/TheInfamousGrim/orm-e-commerce-back-end',
       label: 'github.com',
@@ -87,31 +237,11 @@ export default function Projects() {
       title="All the groovy projects that I've made over the years"
       intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Check out the repos and live links if you like them 🥰."
     >
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.map((project) => (
-          <Card Component="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8"
-                unoptimized
-              />
-            </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
-            <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
-          </Card>
+      <div className="mt-20 grid grid-cols-1 gap-x-6 gap-y-16 tablet:grid-cols-2 xl:grid-cols-3">
+        {projectsTest2.map((project, index) => (
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
-      </ul>
+      </div>
     </SimpleLayout>
   );
 }

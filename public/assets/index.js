@@ -27,8 +27,10 @@ import threejs from "./tech/threejs.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import apiEcommerce from './projects/api-ecommerce.png'
 
 export {
+  apiEcommerce,
   logo,
   backend,
   creator,
