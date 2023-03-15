@@ -1,4 +1,5 @@
 import './globals.css';
+import 'devicon/devicon.min.css';
 
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -84,6 +85,7 @@ export default function RootLayout({
           href="./favicons/favicon-16x16.png"
         />
         <link rel="manifest" href="./favicons/site.webmanifest" />
+        <link rel="stylesheet" href="devicon.min.css" />
       </head>
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
         <div className="fixed inset-0 flex justify-center sm:px-8">

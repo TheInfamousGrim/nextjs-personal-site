@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { Card } from '@/components/Card';
@@ -21,14 +22,18 @@ function ToolsSection({ children, ...props }: ToolsSectionTypes) {
 }
 
 interface ToolTypes {
+  logo?: HTMLElement;
   title: string;
   children: ReactNode;
 }
 
-function Tool({ title, children }: ToolTypes) {
+function Tool({ logo, title, children }: ToolTypes) {
   return (
-    <Card as="li">
-      <Card.Title as="h3">{title}</Card.Title>
+    <Card Component="li">
+      <Card.Title as="h3">
+        {logo}
+        {`  ${title}`}
+      </Card.Title>
       <Card.Description>{children}</Card.Description>
     </Card>
   );
@@ -80,7 +85,10 @@ export default function Uses() {
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
-            <Tool title="⚗️ Visual Studio Code">
+            <Tool
+              logo={<i className="devicon-vscode-plain colored"></i>}
+              title="Visual Studio Code"
+            >
               Atom was the code editor I first cut my teeth on, when I was
               learning Python. Now it's visual studio code. I have the VIM
               extension installed, as I'm debating swapping out either NeoVim or
@@ -96,15 +104,22 @@ export default function Uses() {
             <Tool title="📬 PostMan">Love it, great for building APIs</Tool>
           </ToolsSection>
           <ToolsSection title="Design">
-            <Tool title="🎨 Figma">
+            <Tool
+              logo={<i className="devicon-figma-plain colored"></i>}
+              title="Figma"
+            >
               I started learning how to use figma over two years ago. I was
               always struggling to make my designs look sleek and sophisticated.
               But thanks to figma, It's helped me rapidly design sites that look
               most bodacious 🤟.
             </Tool>
-            <Tool title="📸 Adobe Suite">
+            <Tool
+              logo={<i className="devicon-illustrator-plain colored"></i>}
+              title="Adobe Suite"
+            >
               Use it whenever I need to edit logos or pictures. I mean most
-              people use Adobe so it's not too special 🤣.
+              people use Adobe so it's not too special 🤣. Get the most use out
+              of Illustrator and PhotoShop.
             </Tool>
           </ToolsSection>
         </div>
