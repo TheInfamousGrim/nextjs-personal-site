@@ -35,9 +35,8 @@ function Tool({ title, children }: ToolTypes) {
 }
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description:
-    'George Fincher, a fullstack web developer specializing in React and Next.js applications, based in Birmingham, UK.',
+  title: 'Uses',
+  description: 'The jazzy software, gadgets and gizmos I love to use.',
 };
 
 export default function Uses() {

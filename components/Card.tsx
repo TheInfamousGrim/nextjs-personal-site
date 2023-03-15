@@ -24,8 +24,8 @@ export function Card({
   className,
   children,
 }: {
-  Component: ReactNode;
-  className: string;
+  Component: string;
+  className?: string;
   children: ReactNode;
 }) {
   return (
@@ -66,7 +66,7 @@ Card.Title = function CardTitle({
   href,
   children,
 }: {
-  children: ReactNode;
+  children: string;
   Component: string;
   href: string;
 }) {
@@ -108,7 +108,7 @@ Card.Eyebrow = function CardEyebrow({
   children,
   ...props
 }: {
-  Component: ReactNode;
+  Component: string;
   decorate: boolean;
   className: string;
   children: ReactNode;
