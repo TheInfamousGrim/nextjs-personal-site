@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { SimpleLayout } from '@/components/SimpleLayout';
 import ContactForm from '@/components/ContactForm';
 import { Container } from '@/components/Container';
+import Earth from '@/components/canvas/Earth';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -30,7 +31,10 @@ export default function Contact() {
         </div>
       </Container>
       <Container className="mt-8 sm:mt-16">
-        <ContactForm />
+        <div className="flex flex-col gap-10 overflow-hidden xl:flex-row-reverse xl:items-center">
+          <Earth />
+          <ContactForm />
+        </div>
       </Container>
     </>
   );

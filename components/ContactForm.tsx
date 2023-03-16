@@ -3,12 +3,19 @@
 // Dependencies
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 // Components
 import { Button } from './Button';
 
-// Types
+// HOC
+import { SectionWrapper } from '@/hoc';
 
+// Utilities
+import { slideIn } from '@/lib/motion';
+
+// Types
 type ContactFormData = {
   firstName: string;
   lastName: string;
@@ -31,7 +38,7 @@ function Error(error: ErrorMessage) {
   );
 }
 
-export default function ContactForm() {
+function ContactForm() {
   //   const [submitValue];
   const {
     register,
@@ -48,16 +55,19 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="isolate rounded-3xl bg-topography-sunglow py-12 px-6 sm:py-16 lg:px-8">
+    <motion.div
+      variants={slideIn('left', 'tween', 0.2, 1)}
+      className="isolate flex-[0.75] rounded-3xl bg-space-cadet bg-topography-sunglow py-12 px-6"
+    >
       <div className="mx-auto max-w-xl rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px]">
-        <p className="mt-2 text-lg leading-8 text-gray-600">Get in touch.</p>
+        <p className="mt-2 text-lg leading-8 text-zinc-800">Get in touch.</p>
         <h2 className="bg-gradient-to-r from-sunglow to-bright-pink bg-clip-text text-3xl font-bold tracking-tight text-gray-900 text-transparent sm:text-4xl">
           Say What's Up
         </h2>
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto mt-16 max-w-xl bg-[#ffffff33] p-2 backdrop-blur-[10px] sm:mt-20"
+        className="mx-auto mt-16 max-w-xl rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px] sm:mt-20"
       >
         <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
           <div>
@@ -173,6 +183,8 @@ export default function ContactForm() {
           />
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 }
+
+export default SectionWrapper(ContactForm, 'contact-form');
