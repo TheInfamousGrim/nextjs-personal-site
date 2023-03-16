@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/TheInfamousGrim/nextjs-personal-site#readme",
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@headlessui/react": "^1.7.13",
     "@react-three/drei": "^9.57.3",
     "@react-three/fiber": "^8.12.0",
