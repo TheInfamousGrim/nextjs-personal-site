@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 
 // Components
-import { SimpleLayout } from '@/components/SimpleLayout';
 import ContactForm from '@/components/ContactForm';
 import { Container } from '@/components/Container';
 import Earth from '@/components/canvas/Earth';
