@@ -1,7 +1,7 @@
 'use client';
 
 // Dependencies
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
@@ -39,20 +39,52 @@ function Error(error: ErrorMessage) {
 }
 
 function ContactForm() {
-  //   const [submitValue];
   const {
     register,
+    reset,
     setValue,
-    formState: { errors },
+    formState,
+    formState: { errors, isSubmitSuccessful },
     handleSubmit,
   } = useForm<ContactFormData>({
     mode: 'onChange',
+    defaultValues: { firstName: '', lastName: '', email: '', message: '' },
   });
 
   const onSubmit = (data: ContactFormData) => {
     console.log(JSON.stringify(data));
     // setSubmitValue(data);
+    // connect to emailjs service
+    emailjs
+      .send(
+        'service_godqp55',
+        'template_0wjvcaw',
+        {
+          user_name: `${data.firstName} ${data.lastName}`,
+          to_name: 'George',
+          user_email: data.email,
+          to_email: 'finchergeorge1@gmail.com',
+          message: data.message,
+        },
+        'DlWDHZAAI3RXiqFg7'
+      )
+      .then(
+        function (response) {
+          console.log('SUCCESS', response.status, response.text);
+        },
+        function (error) {
+          console.log('FAILED..', error);
+        }
+      );
   };
+
+  // Reset form data
+
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({ firstName: '', lastName: '', email: '', message: '' });
+    }
+  }, [formState, reset]);
 
   return (
     <motion.div
