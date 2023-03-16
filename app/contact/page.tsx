@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 
 // Components
 import { SimpleLayout } from '@/components/SimpleLayout';
+import ContactForm from '@/components/ContactForm';
+import { Container } from '@/components/Container';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -10,11 +12,26 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <SimpleLayout
-      title="Get In Contact With Me If You Feel Like 😁"
-      intro="I'm always open to new job opportunities or collaborating on some awesome new projects. Just fill out the form and I'll get back to you 💪."
-    >
-      <div>hello</div>
-    </SimpleLayout>
+    <>
+      <Container className="mt-16 sm:mt-32">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            Get In{' '}
+            <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-8xl">
+              Contact
+            </span>{' '}
+            With Me If You Feel Like 😁
+          </h1>
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            I'm always open to new job opportunities or collaborating on some
+            awesome new projects. Just fill out the form and I'll get back to
+            you 💪.
+          </p>
+        </div>
+      </Container>
+      <Container className="mt-8 sm:mt-16">
+        <ContactForm />
+      </Container>
+    </>
   );
 }

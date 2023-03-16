@@ -21,7 +21,8 @@ module.exports = {
 
       },
       backgroundImage: {
-        topography: "url(../public/patterns/topography.svg)"
+        topography: "url(../public/patterns/topography.svg)",
+        'topography-sunglow': "url(../public/patterns/topography-sunglow.svg)"
       },
       screens: {
         'tablet': '720px',

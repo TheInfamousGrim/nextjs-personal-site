@@ -1,5 +1,4 @@
 // Dependencies
-import { HTMLAttributes, ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
@@ -162,7 +161,7 @@ function Resume() {
       start: '2021',
       end: {
         label: 'Present',
-        dateTime: new Date().getFullYear(),
+        dateTime: new Date().getFullYear().toString(),
       },
     },
     {
