@@ -5,6 +5,7 @@ import clsx from 'clsx';
 
 import { Container } from '@/components/Container';
 import {
+  DiscordIcon,
   GitHubIcon,
   LinkedInIcon,
   TwitterIcon,
@@ -29,7 +30,7 @@ function SocialLink({
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-aquamarine dark:text-zinc-200"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
@@ -38,7 +39,7 @@ function SocialLink({
   );
 }
 
-function MailIcon(props) {
+function MailIcon(props: any) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -66,7 +67,7 @@ export default function About() {
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>
@@ -131,6 +132,13 @@ export default function About() {
                 className="mt-4"
               >
                 Follow on LinkedIn
+              </SocialLink>
+              <SocialLink
+                href="discordapp.com/users/GrimFunk#8985"
+                icon={DiscordIcon}
+                className="mt-4"
+              >
+                Follow on Discord
               </SocialLink>
               <SocialLink
                 href="mailto:finchergeorge1@gmail.com"
