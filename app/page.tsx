@@ -22,10 +22,6 @@ import logoGSA from '../public/logos/gsa.svg';
 import logoUOE from '../public/logos/university-of-exeter.svg';
 import logoBuckland from '../public/logos/west-buckland.svg';
 
-interface IconProps {
-  className?: string;
-}
-
 // Images
 import gallery1 from '@/public/home-gallery/vaporwave-background-1.png';
 import gallery2 from '@/public/home-gallery/vaporwave-background-2.png';
@@ -33,6 +29,10 @@ import gallery3 from '@/public/home-gallery/vaporwave-background-3.png';
 import gallery4 from '@/public/home-gallery/vaporwave-background-4.png';
 import gallery5 from '@/public/home-gallery/vaporwave-background-5.png';
 import widePicture from '@/public/home-gallery/vaporwave-wide-aspect.png';
+
+interface IconProps {
+  className?: string;
+}
 
 function MailIcon(props: IconProps) {
   return (
@@ -120,13 +120,15 @@ type SocialLinkProps = {
 
 function SocialLink({
   icon: Icon,
+  href,
   ...props
 }: {
   icon: JSX.Element;
+  href: string;
   props: SocialLinkProps;
 }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className="group -m-1 p-1" href={href} {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-aquamarine dark:fill-zinc-400" />
     </Link>
   );

@@ -8,43 +8,6 @@ import Script from 'next/script';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { StarsCanvas } from '@/components/canvas/Stars';
-import HomeLoader from './loading';
-
-// theme Script
-const modeScript = `
-  let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-  updateMode()
-  darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
-  window.addEventListener('storage', updateModeWithoutTransitions)
-
-  function updateMode() {
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = window.localStorage.isDarkMode === 'true' || (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
-
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-
-    if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
-    }
-  }
-
-  function disableTransitionsTemporarily() {
-    document.documentElement.classList.add('[&_*]:!transition-none')
-    window.setTimeout(() => {
-      document.documentElement.classList.remove('[&_*]:!transition-none')
-    }, 0)
-  }
-
-  function updateModeWithoutTransitions() {
-    disableTransitionsTemporarily()
-    updateMode()
-  }
-`;
 
 export const metadata: Metadata = {
   title: {
@@ -63,11 +26,39 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* <Script
-          id="set-theme"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: modeScript }}
-        /> */}
+        <Script id="set-theme">{`
+          let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+          updateMode()
+          darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
+          window.addEventListener('storage', updateModeWithoutTransitions)
+
+          function updateMode() {
+          let isSystemDarkMode = darkModeMediaQuery.matches
+          let isDarkMode = window.localStorage.isDarkMode === 'true' || (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
+
+            if (isDarkMode) {
+              document.documentElement.classList.add('dark')
+            } else {
+              document.documentElement.classList.remove('dark')
+            }
+
+            if (isDarkMode === isSystemDarkMode) {
+              delete window.localStorage.isDarkMode
+            }
+          }
+
+          function disableTransitionsTemporarily() {
+            document.documentElement.classList.add('[&_*]:!transition-none')
+            window.setTimeout(() => {
+              document.documentElement.classList.remove('[&_*]:!transition-none')
+            }, 0)
+          }
+
+          function updateModeWithoutTransitions() {
+            disableTransitionsTemporarily()
+            updateMode()}
+          `}</Script>
         <link
           rel="apple-touch-icon"
           sizes="180x180"

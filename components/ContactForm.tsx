@@ -82,7 +82,6 @@ function ContactForm() {
           if (response.status === 200) setSuccessOpen(true);
         },
         function (error) {
-          console.log('FAILED..', error.text);
           if (error) {
             setEmailjsErrorMessage(error.text);
             setErrorOpen(true);

@@ -148,7 +148,6 @@ function ExperienceCard({ experience }: { experience: ExperienceTypes }) {
 }
 
 function Experience() {
-  console.log(typeof topographyAquamarine.src);
   return (
     <>
       <Container className="mt-16 sm:mt-32">
