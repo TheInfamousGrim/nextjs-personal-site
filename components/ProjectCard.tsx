@@ -34,10 +34,11 @@ export default function ProjectCard({
   return (
     <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
       <Tilty
-        max={45}
-        scale={1}
-        speed={450}
-        className="group relative flex flex-col items-start rounded-2xl bg-space-cadet p-5 shadow-xl"
+        scale={1.1}
+        max={25}
+        speed={350}
+        style={{ transformStyle: 'preserve-3d' }}
+        className="group relative flex h-full flex-col items-start rounded-2xl bg-space-cadet bg-topography-sunglow p-5 shadow-xl"
       >
         <div className="relative h-[230px] w-full">
           <img
@@ -46,7 +47,7 @@ export default function ProjectCard({
             className="h-full w-full rounded-2xl object-cover"
           />
 
-          <div className="card-img_hover absolute inset-0 m-3 flex justify-end">
+          <div className="absolute inset-0 m-3 flex justify-end">
             <Link
               href={sourceCodeLink}
               //   onClick={() => window.open(sourceCodeLink, '_blank')}
@@ -61,7 +62,7 @@ export default function ProjectCard({
           </div>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 rounded-md bg-[#ffffff33] p-1 backdrop-blur-[10px]">
           <h3 className="flex justify-between text-[24px] font-bold text-zinc-100">
             <p className="max-w-[200px]">{name} </p>
             <div className="z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
@@ -73,7 +74,7 @@ export default function ProjectCard({
           </p>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 rounded-md bg-[#ffffff33] p-1 backdrop-blur-[10px]">
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}

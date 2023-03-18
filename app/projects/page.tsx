@@ -39,7 +39,7 @@ const projectsTest2 = [
       },
       {
         name: 'Apollo',
-        color: 'text-indigo-500',
+        color: 'text-indigo-300',
       },
       {
         name: 'MongoDB',
@@ -65,7 +65,7 @@ const projectsTest2 = [
       },
       {
         name: 'Vite',
-        color: 'text-indigo-500',
+        color: 'text-indigo-300',
       },
       {
         name: 'Tailwind',
@@ -95,7 +95,7 @@ const projectsTest2 = [
       },
       {
         name: 'mongoose',
-        color: 'text-rose-600',
+        color: 'text-rose-300',
       },
       {
         name: 'Express',
