@@ -38,7 +38,7 @@ export default function ProjectCard({
         max={25}
         speed={350}
         style={{ transformStyle: 'preserve-3d' }}
-        className="group relative flex h-full flex-col items-start rounded-2xl bg-space-cadet bg-topography-sunglow p-5 shadow-xl"
+        className="group relative flex h-full flex-col items-start rounded-2xl border border-sunglow bg-space-cadet bg-topography-sunglow p-5 shadow-xl"
       >
         <div className="relative h-[230px] w-full">
           <img
