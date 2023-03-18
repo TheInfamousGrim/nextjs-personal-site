@@ -26,6 +26,13 @@ interface IconProps {
   className?: string;
 }
 
+// Images
+import gallery1 from '@/public/home-gallery/vaporwave-background-1.png';
+import gallery2 from '@/public/home-gallery/vaporwave-background-2.png';
+import gallery3 from '@/public/home-gallery/vaporwave-background-3.png';
+import gallery4 from '@/public/home-gallery/vaporwave-background-4.png';
+import gallery5 from '@/public/home-gallery/vaporwave-background-5.png';
+
 function MailIcon(props: IconProps) {
   return (
     <svg
@@ -307,43 +314,96 @@ export default function Home() {
   return (
     <>
       <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software Developer, Designer, and Lover of Dress-Up and Make
-            <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-8xl">
-              Believe
-            </span>
-            .
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m George Fincher, a fullstack web developer specializing in React
-            and Next.js applications, based in Birmingham, UK. I’m a Junior IT
-            Executive at Aston & Fincher, where I design, develop and implement
-            our internal IT infrastructure and integrate software that serves
-            barbers, hairdressers and beauticians with the products they need
-            across the UK.
-          </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com/GrimFunk69"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://github.com/TheInfamousGrim"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/george-fincher-aa7869214/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
-            <SocialLink
-              href="https://www.discordapp.com/users/GrimFunk#8985"
-              aria-label="Follow on Discord"
-              icon={DiscordIcon}
-            />
+        <div className="overflow-hidden">
+          <div className="">
+            <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+              <div className="xl:max-w-wxl w-full max-w-xs lg:shrink-0">
+                <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+                  Software Developer, Designer, and Lover of Dress-Up and Make
+                  <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-7xl">
+                    Believe.
+                  </span>
+                </h1>
+                <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+                  I’m George Fincher, a fullstack web developer specializing in
+                  React and Next.js applications, based in Birmingham, UK. I’m a
+                  Junior IT Executive at Aston & Fincher, where I design,
+                  develop and implement our internal IT infrastructure and
+                  integrate software that serves barbers, hairdressers and
+                  beauticians with the products they need across the UK.
+                </p>
+                <div className="mt-6 flex gap-6">
+                  <SocialLink
+                    href="https://twitter.com/GrimFunk69"
+                    aria-label="Follow on Twitter"
+                    icon={TwitterIcon}
+                  />
+                  <SocialLink
+                    href="https://github.com/TheInfamousGrim"
+                    aria-label="Follow on GitHub"
+                    icon={GitHubIcon}
+                  />
+                  <SocialLink
+                    href="https://www.linkedin.com/in/george-fincher-aa7869214/"
+                    aria-label="Follow on LinkedIn"
+                    icon={LinkedInIcon}
+                  />
+                  <SocialLink
+                    href="https://www.discordapp.com/users/GrimFunk#8985"
+                    aria-label="Follow on Discord"
+                    icon={DiscordIcon}
+                  />
+                </div>
+              </div>
+              <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+                <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                  <div className="relative">
+                    <Image
+                      src={gallery1}
+                      alt=""
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    />
+                    <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                  </div>
+                </div>
+                <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                  <div className="relative">
+                    <Image
+                      src={gallery2}
+                      alt=""
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    />
+                    <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                  </div>
+                  <div className="relative">
+                    <Image
+                      src={gallery3}
+                      alt=""
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    />
+                    <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                  </div>
+                </div>
+                <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                  <div className="relative">
+                    <Image
+                      src={gallery4}
+                      alt=""
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    />
+                    <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                  </div>
+                  <div className="relative">
+                    <Image
+                      src={gallery5}
+                      alt=""
+                      className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    />
+                    <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

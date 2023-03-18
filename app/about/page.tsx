@@ -11,6 +11,7 @@ import {
   TwitterIcon,
 } from '@/components/SocialIcons';
 import portraitImage from '@/public/Headshot_2020.jpg';
+import avatarImage from '@/public/GrimFunk-psychadelic.png';
 import { ReactNode } from 'react';
 
 interface SocialLinkTypes {
@@ -62,15 +63,16 @@ export default function About() {
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
-            <div className="max-w-xs px-2.5 lg:max-w-none">
+            <div className="max-w-xs lg:max-w-none">
               <Image
                 src={portraitImage}
-                alt=""
+                alt="Portrait photo of George Fincher, aka GrimFunky"
                 sizes="(min-width: 1024px) 32rem, 20rem"
                 className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>
+
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
               Names{' '}
@@ -112,7 +114,7 @@ export default function About() {
             </div>
           </div>
           <div className="lg:pl-20">
-            <ul role="list">
+            <ul role="list" className="border-t border-aquamarine pt-8">
               <SocialLink
                 href="https://twitter.com/GrimFunk69"
                 icon={TwitterIcon}
@@ -143,11 +145,21 @@ export default function About() {
               <SocialLink
                 href="mailto:finchergeorge1@gmail.com"
                 icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                className="mt-8 border-t border-aquamarine pt-8 dark:border-zinc-700/40"
               >
                 finchergeorge1@gmail.com
               </SocialLink>
             </ul>
+            <div className="mt-8 border-t border-aquamarine pt-8 dark:border-zinc-700/40">
+              <div className="max-w-xs lg:max-w-none">
+                <Image
+                  src={avatarImage}
+                  alt="Stylized vaporwave portrait of a skull floating above an island"
+                  sizes="(min-width: 1024px) 32rem, 20rem"
+                  className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </Container>
