@@ -7,6 +7,7 @@ import Script from 'next/script';
 // Components
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { StarsCanvas } from '@/components/canvas/Stars';
 
 // theme Script
 const modeScript = `
@@ -85,7 +86,8 @@ export default function RootLayout({
         />
         <link rel="manifest" href="./favicons/site.webmanifest" />
       </head>
-      <body className="flex h-full flex-col bg-topography dark:bg-black">
+      <body className="flex h-full flex-col dark:bg-black">
+        <StarsCanvas />
         <div className="fixed inset-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
             <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
