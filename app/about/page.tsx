@@ -145,12 +145,12 @@ export default function About() {
               <SocialLink
                 href="mailto:finchergeorge1@gmail.com"
                 icon={MailIcon}
-                className="mt-8 border-t border-aquamarine pt-8 dark:border-zinc-700/40"
+                className="mt-8 border-t border-aquamarine pt-8"
               >
                 finchergeorge1@gmail.com
               </SocialLink>
             </ul>
-            <div className="mt-8 border-t border-aquamarine pt-8 dark:border-zinc-700/40">
+            <div className="mt-8 border-t border-aquamarine pt-8">
               <div className="max-w-xs lg:max-w-none">
                 <Image
                   src={avatarImage}
