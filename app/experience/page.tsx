@@ -101,9 +101,11 @@ function ExperienceCard({ experience }: { experience: ExperienceTypes }) {
       contentStyle={{
         background: '#FB6A82',
         color: '#fff',
+        backgroundImage: `url(${topographyAquamarine.src})`,
       }}
       contentArrowStyle={{ borderRight: '7px solid #fb6a82' }}
       date={experience.date}
+      dateClassName="rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px] text-zinc-800 dark:text-zinc-100 text-bold opacity-100"
       iconStyle={{ background: experience.iconBg, borderColor: '#00FFAB' }}
       icon={
         <div className="flex h-full w-full items-center justify-center">
@@ -115,29 +117,31 @@ function ExperienceCard({ experience }: { experience: ExperienceTypes }) {
         </div>
       }
     >
-      <div className="py-5">
-        <h3 className="text-xl font-semibold leading-6 text-zinc-100">
-          {experience.title}
-        </h3>
-        <p
-          className="mt-1 max-w-2xl text-sm font-thin text-zinc-300"
-          style={{ margin: 0 }}
-        >
-          {experience.company_name}
-        </p>
-      </div>
+      <div className="mb-2 rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px]">
+        <div className="py-5">
+          <h3 className="text-xl font-semibold leading-6 text-zinc-100">
+            {experience.title}
+          </h3>
+          <p
+            className="mt-1 max-w-2xl text-sm font-thin text-zinc-300"
+            style={{ margin: 0 }}
+          >
+            {experience.company_name}
+          </p>
+        </div>
 
-      <div className="border-t border-aquamarine px-4 py-5 sm:p-0">
-        <ul className="mt-5 ml-5 list-disc space-y-2">
-          {experience.points.map((point, index) => (
-            <li
-              key={`experience-point-${index}`}
-              className="text-white-100 pl-1 text-[14px] tracking-wider"
-            >
-              {point}
-            </li>
-          ))}
-        </ul>
+        <div className="border-t border-aquamarine px-4 py-5 sm:p-0">
+          <ul className="mt-5 ml-5 list-disc space-y-2">
+            {experience.points.map((point, index) => (
+              <li
+                key={`experience-point-${index}`}
+                className="text-white-100 pl-1 text-[14px] tracking-wider"
+              >
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </VerticalTimelineElement>
   );

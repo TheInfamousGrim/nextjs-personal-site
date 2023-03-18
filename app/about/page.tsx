@@ -85,14 +85,15 @@ export default function About() {
               <p>
                 I like to think I've lived a storied life. I went to university
                 initially to study a masters in physics & came out with a
-                bachelors in film, drama, philosophy and mathematics and then
-                went on achieve an MFA in acting at Guildford School of Acting
+                bachelors in film, drama, philosophy and mathematics. I then
+                went on to achieve an MFA in acting at Guildford School of
+                Acting.
               </p>
               <p>
                 The pandemic was brutal, we all know that. It made me rethink
                 acting, so I got three separate jobs in the midst of all the
-                madness. But with determination, I ventured back into the realm
-                of programming.
+                madness. But with determination, grit and vigour I ventured back
+                into the realm of programming.
               </p>
               <p>
                 My programming journey earnestly began in 2020, with my first
