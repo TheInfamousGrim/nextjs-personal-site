@@ -241,7 +241,7 @@ export default function Projects() {
   return (
     <SimpleLayout
       HighlightedWord={HighLightedWord()}
-      title="All the groovy projects that I've made over the years"
+      title="All The Groovy Things That I've Made Over The Years"
       intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Check out the repos and live links if you like them 🥰."
     >
       <div className="mt-20 grid grid-cols-1 gap-x-6 gap-y-16 tablet:grid-cols-2 xl:grid-cols-3">
