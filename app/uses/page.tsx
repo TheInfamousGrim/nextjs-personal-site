@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { Card } from '@/components/Card';
@@ -39,6 +38,14 @@ function Tool({ logo, title, children }: ToolTypes) {
   );
 }
 
+function HighLightedWord() {
+  return (
+    <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-8xl">
+      Uses:
+    </span>
+  );
+}
+
 export const metadata: Metadata = {
   title: 'Uses',
   description: 'The jazzy software, gadgets and gizmos I love to use.',
@@ -48,7 +55,8 @@ export default function Uses() {
   return (
     <>
       <SimpleLayout
-        title="The Jazzy Software, Gadgets and Gizmos I Love to Use 🤗"
+        HighlightedWord={HighLightedWord()}
+        title=" The Jazzy Software, Gadgets And Gizmos I Love To Use 🤗"
         intro="What do you use you might ask? Glad you're interested! Here’s a big list of all of the good techno wizardry I love to use."
       >
         <div className="space-y-20">

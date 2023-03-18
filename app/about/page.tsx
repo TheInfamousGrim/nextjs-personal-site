@@ -72,8 +72,11 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Names George Fincher, I Live in Birmingham, Where I Weave Web Dev
-              Magic.
+              Names{' '}
+              <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-8xl">
+                George Fincher
+              </span>
+              , I Live in Birmingham, Where I Weave Web Dev Magic.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
