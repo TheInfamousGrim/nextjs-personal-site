@@ -34,7 +34,7 @@ export default function ProjectCard({
   return (
     <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
       <Tilty
-        scale={1.1}
+        scale={1.05}
         max={25}
         speed={350}
         style={{ transformStyle: 'preserve-3d' }}

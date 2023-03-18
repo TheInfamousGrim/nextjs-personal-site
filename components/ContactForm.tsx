@@ -109,7 +109,7 @@ function ContactForm() {
       />
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className="isolate flex-[0.75] rounded-3xl bg-space-cadet bg-topography-sunglow py-12 px-6"
+        className="isolate flex-[0.75] rounded-3xl border border-sunglow bg-space-cadet bg-topography-sunglow py-12 px-6"
       >
         <div className="mx-auto max-w-xl rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px]">
           <p className="mt-2 text-lg leading-8 text-zinc-800">Get in touch.</p>
