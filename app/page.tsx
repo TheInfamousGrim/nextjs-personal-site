@@ -8,6 +8,7 @@ import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import HeroCard from '@/components/HeroCard';
 import {
+  DiscordIcon,
   GitHubIcon,
   LinkedInIcon,
   TwitterIcon,
@@ -20,6 +21,14 @@ import logoUOB from '../public/logos/university-of-birmingham.svg';
 import logoGSA from '../public/logos/gsa.svg';
 import logoUOE from '../public/logos/university-of-exeter.svg';
 import logoBuckland from '../public/logos/west-buckland.svg';
+
+// Images
+import gallery1 from '@/public/home-gallery/vaporwave-background-1.png';
+import gallery2 from '@/public/home-gallery/vaporwave-background-2.png';
+import gallery3 from '@/public/home-gallery/vaporwave-background-3.png';
+import gallery4 from '@/public/home-gallery/vaporwave-background-4.png';
+import gallery5 from '@/public/home-gallery/vaporwave-background-5.png';
+import widePicture from '@/public/home-gallery/vaporwave-wide-aspect.png';
 
 interface IconProps {
   className?: string;
@@ -38,11 +47,11 @@ function MailIcon(props: IconProps) {
     >
       <path
         d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+        className="fill-zinc-100 stroke-sunglow"
       />
       <path
         d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        className="stroke-sunglow"
       />
     </svg>
   );
@@ -61,11 +70,11 @@ function BriefcaseIcon(props: IconProps) {
     >
       <path
         d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+        className="fill-zinc-100 stroke-bright-pink"
       />
       <path
         d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        className="stroke-bright-pink"
       />
     </svg>
   );
@@ -85,7 +94,7 @@ function AcademicCap(props: IconProps) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+        className="fill-zinc-100 stroke-aquamarine"
         d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
       />
     </svg>
@@ -111,44 +120,39 @@ type SocialLinkProps = {
 
 function SocialLink({
   icon: Icon,
+  href,
   ...props
 }: {
   icon: JSX.Element;
+  href: string;
   props: SocialLinkProps;
 }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <Link className="group -m-1 p-1" href={href} {...props}>
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-aquamarine dark:fill-zinc-400" />
     </Link>
   );
 }
 
 function GetInContact() {
   return (
-    <form action="/thank-you" className="rounded-2xl border border-sunglow p-6">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <div className="rounded-2xl border border-sunglow bg-space-cadet bg-topography-sunglow p-6">
+      <h2 className="flex rounded-md bg-[#ffffff33] p-2 text-sm font-semibold text-zinc-100 backdrop-blur-[10px]">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Get In Contact</span>
       </h2>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        If you'd like to contact me please feel free to fill in the form below.
+      <p className="mt-2 rounded-md bg-[#ffffff33] p-2 text-sm text-zinc-300 backdrop-blur-[10px]">
+        If you'd like to contact me, follow the link below and fill out the form
+        😁.
       </p>
-      <div className="mt-6 flex">
-        <input
-          type="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button
-          variant="secondary"
-          text="join"
-          type="button"
-          className="ml-4 flex-none"
-        ></Button>
-      </div>
-    </form>
+      <Button
+        href="/contact"
+        variant="primary"
+        text="Contact"
+        type="button"
+        className="mt-6 w-full"
+      ></Button>
+    </div>
   );
 }
 
@@ -174,29 +178,30 @@ function Resume() {
   ];
 
   return (
-    <div className="rounded-2xl border border-bright-pink p-6 ">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <div className="rounded-2xl border border-bright-pink bg-space-cadet bg-topography-bright-pink p-6">
+      <h2 className="flex rounded-md bg-[#ffffff33] p-2 text-sm font-semibold text-zinc-100 backdrop-blur-[10px]">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <li
+            key={roleIndex}
+            className="flex gap-4 rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px]"
+          >
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5">
               <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dd className="w-full flex-none text-sm font-medium text-zinc-200">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.title}
-              </dd>
+              <dd className="text-xs text-zinc-300">{role.title}</dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                className="ml-auto text-xs text-zinc-400"
                 aria-label={`${role.start} until ${role.end.label ?? role.end}`}
               >
                 <time dateTime={role.start}>{role.start}</time>{' '}
@@ -211,7 +216,7 @@ function Resume() {
       </ol>
       <Button
         href="https://docs.google.com/document/d/1tEmQaS4c8bL4XMCJ6XHtqHHp7zL62VOazIOmlQnm618/edit"
-        variant="secondary"
+        variant="primary"
         className="group mt-6 w-full"
         text="Download CV"
         icon={ArrowDownIcon({
@@ -260,33 +265,32 @@ function Education() {
   ];
 
   return (
-    <div className="rounded-2xl border border-aquamarine p-6">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <div className="rounded-2xl border border-aquamarine bg-space-cadet bg-topography-aquamarine p-6">
+      <h2 className="flex rounded-md bg-[#ffffff33] p-2 text-sm font-semibold text-zinc-100 backdrop-blur-[10px]">
         <AcademicCap className="h-6 w-6 flex-none" />
         <span className="ml-3">Education</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {education.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <li
+            key={roleIndex}
+            className="flex gap-4 rounded-md bg-[#ffffff33] p-2 shadow-md backdrop-blur-[10px]"
+          >
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5">
               <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
             </div>
             <dl className="flex flex-auto flex-col flex-wrap gap-x-2">
               <dt className="sr-only">University</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dd className="w-full flex-none text-sm font-medium text-zinc-100">
                 {role.school}
               </dd>
               <dt className="sr-only">Course</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.course}
-              </dd>
+              <dd className="text-xs text-zinc-300">{role.course}</dd>
               <dt className="sr-only">Grade</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.grade}
-              </dd>
+              <dd className="text-xs text-zinc-300">{role.grade}</dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="block text-xs text-zinc-400 dark:text-zinc-500"
+                className="block text-xs text-zinc-400"
                 aria-label={`${role.start} until ${role.end.label ?? role.end}`}
               >
                 <time dateTime={role.start}>{role.start}</time>{' '}
@@ -313,42 +317,107 @@ export default function Home() {
   return (
     <>
       <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software Developer, Designer, and Lover of Dress-Up and Make
-            Believe.
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m George Fincher, a fullstack web developer specializing in React
-            and Next.js applications, based in Birmingham, UK. I’m a Junior IT
-            Executive at Aston & Fincher, where I design, develop and implement
-            our internal IT infrastructure and integrate software that serves
-            barbers, hairdressers and beauticians with the products they need
-            across the UK.
-          </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com/GrimFunk69"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://github.com/TheInfamousGrim"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://www.linkedin.com/in/george-fincher-aa7869214/"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
+        <div className="overflow-hidden">
+          <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
+            <div className="xl:max-w-wxl w-full max-w-xs lg:shrink-0">
+              <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+                Software Developer, Designer, And Lover Of Dress-Up And Make{' '}
+                <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-7xl">
+                  Believe.
+                </span>
+              </h1>
+              <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+                I’m George Fincher, a fullstack web developer specializing in
+                React and Next.js applications, based in Birmingham, UK. I’m a
+                Junior IT Executive at Aston & Fincher, where I design, develop
+                and implement our internal IT infrastructure and integrate
+                software that serves barbers, hairdressers and beauticians with
+                the products they need across the UK.
+              </p>
+              <div className="mt-6 flex gap-6">
+                <SocialLink
+                  href="https://twitter.com/GrimFunk69"
+                  aria-label="Follow on Twitter"
+                  icon={TwitterIcon}
+                />
+                <SocialLink
+                  href="https://github.com/TheInfamousGrim"
+                  aria-label="Follow on GitHub"
+                  icon={GitHubIcon}
+                />
+                <SocialLink
+                  href="https://www.linkedin.com/in/george-fincher-aa7869214/"
+                  aria-label="Follow on LinkedIn"
+                  icon={LinkedInIcon}
+                />
+                <SocialLink
+                  href="https://www.discordapp.com/users/GrimFunk#8985"
+                  aria-label="Follow on Discord"
+                  icon={DiscordIcon}
+                />
+              </div>
+            </div>
+            <div className="mt-14 flex justify-end gap-8 sm:-mt-60 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
+              <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                <div className="relative">
+                  <Image
+                    src={gallery1}
+                    alt="psychedelic vaporwave artwork of a giant statue staring over an ocean"
+                    className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                </div>
+              </div>
+              <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
+                <div className="relative">
+                  <Image
+                    src={gallery2}
+                    alt="vaporwave side profile of a woman looking out at a distorted world"
+                    className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                </div>
+                <div className="relative">
+                  <Image
+                    src={gallery3}
+                    alt="A crusty retrofutristic living room that has a window peering out into the psychedelic ocean"
+                    className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                </div>
+              </div>
+              <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+                <div className="relative">
+                  <Image
+                    src={gallery4}
+                    alt="A piece of ground raised up with a statue of man composed of clay like grey matter"
+                    className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                </div>
+                <div className="relative">
+                  <Image
+                    src={gallery5}
+                    alt="A phantasmagoric alien world where the stone appears almost cloudlike"
+                    className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
       <Container className="mt-9">
         <HeroCard />
       </Container>
-      <Container className="mt-24 md:mt-28">
+      <Container.Outer className="mt-9">
+        <Image
+          src={widePicture}
+          alt="A psychedelic greek side profile of an androgynous being against an ethereal backdrop"
+        />
+      </Container.Outer>
+      <Container className="mt-12 md:mt-14">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <Education />
           <div className="space-y-10 lg:pl-16 xl:pl-24">

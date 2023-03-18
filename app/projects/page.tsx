@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import { Metadata } from 'next';
 
-import { Card } from '@/components/Card';
 import ProjectCard from '@/components/ProjectCard';
 import { SimpleLayout } from '@/components/SimpleLayout';
 
@@ -41,7 +39,7 @@ const projectsTest2 = [
       },
       {
         name: 'Apollo',
-        color: 'text-indigo-500',
+        color: 'text-indigo-300',
       },
       {
         name: 'MongoDB',
@@ -67,7 +65,7 @@ const projectsTest2 = [
       },
       {
         name: 'Vite',
-        color: 'text-indigo-500',
+        color: 'text-indigo-300',
       },
       {
         name: 'Tailwind',
@@ -97,7 +95,7 @@ const projectsTest2 = [
       },
       {
         name: 'mongoose',
-        color: 'text-rose-600',
+        color: 'text-rose-300',
       },
       {
         name: 'Express',
@@ -226,6 +224,14 @@ function LinkIcon(props: LinkIconProps) {
   );
 }
 
+function HighLightedWord() {
+  return (
+    <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-8xl">
+      Projects:
+    </span>
+  );
+}
+
 export const metadata: Metadata = {
   title: 'Projects',
   description: `All the cool stuff I've worked on as a web dev`,
@@ -234,7 +240,8 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="All the groovy projects that I've made over the years"
+      HighlightedWord={HighLightedWord()}
+      title="All The Groovy Things That I've Made Over The Years"
       intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Check out the repos and live links if you like them 🥰."
     >
       <div className="mt-20 grid grid-cols-1 gap-x-6 gap-y-16 tablet:grid-cols-2 xl:grid-cols-3">

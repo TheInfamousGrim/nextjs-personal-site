@@ -5,11 +5,13 @@ import clsx from 'clsx';
 
 import { Container } from '@/components/Container';
 import {
+  DiscordIcon,
   GitHubIcon,
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons';
 import portraitImage from '@/public/Headshot_2020.jpg';
+import avatarImage from '@/public/GrimFunk-psychadelic.png';
 import { ReactNode } from 'react';
 
 interface SocialLinkTypes {
@@ -29,7 +31,7 @@ function SocialLink({
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-aquamarine dark:text-zinc-200"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
@@ -38,7 +40,7 @@ function SocialLink({
   );
 }
 
-function MailIcon(props) {
+function MailIcon(props: any) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -61,32 +63,37 @@ export default function About() {
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
-            <div className="max-w-xs px-2.5 lg:max-w-none">
+            <div className="max-w-xs lg:max-w-none">
               <Image
                 src={portraitImage}
-                alt=""
+                alt="Portrait photo of George Fincher, aka GrimFunky"
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>
+
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Names George Fincher, I Live in Birmingham, Where I Weave Web Dev
-              Magic.
+              Names{' '}
+              <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-8xl">
+                George Fincher
+              </span>
+              , I Live in Birmingham, Where I Weave Web Dev Magic.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 I like to think I've lived a storied life. I went to university
                 initially to study a masters in physics & came out with a
-                bachelors in film, drama, philosophy and mathematics and then
-                went on achieve an MFA in acting at Guildford School of Acting
+                bachelors in film, drama, philosophy and mathematics. I then
+                went on to achieve an MFA in acting at Guildford School of
+                Acting.
               </p>
               <p>
                 The pandemic was brutal, we all know that. It made me rethink
                 acting, so I got three separate jobs in the midst of all the
-                madness. But with determination, I ventured back into the realm
-                of programming.
+                madness. But with determination, grit and vigour I ventured back
+                into the realm of programming.
               </p>
               <p>
                 My programming journey earnestly began in 2020, with my first
@@ -108,35 +115,52 @@ export default function About() {
             </div>
           </div>
           <div className="lg:pl-20">
-            <ul role="list">
+            <ul role="list" className="border-t border-aquamarine pt-8">
               <SocialLink
                 href="https://twitter.com/GrimFunk69"
                 icon={TwitterIcon}
               >
-                Follow on Twitter
+                @GrimFunk69
               </SocialLink>
               <SocialLink
                 href="https://github.com/TheInfamousGrim"
                 icon={GitHubIcon}
                 className="mt-4"
               >
-                Follow on GitHub
+                @TheInfamousGrim
               </SocialLink>
               <SocialLink
                 href="https://www.linkedin.com/in/george-fincher-aa7869214/"
                 icon={LinkedInIcon}
                 className="mt-4"
               >
-                Follow on LinkedIn
+                @george-fincher-aa7869214
+              </SocialLink>
+              <SocialLink
+                href="https://www.discordapp.com/users/GrimFunk#8985"
+                icon={DiscordIcon}
+                className="mt-4"
+              >
+                @GrimFunk#8985
               </SocialLink>
               <SocialLink
                 href="mailto:finchergeorge1@gmail.com"
                 icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                className="mt-8 border-t border-aquamarine pt-8"
               >
                 finchergeorge1@gmail.com
               </SocialLink>
             </ul>
+            <div className="mt-8 border-t border-aquamarine pt-8">
+              <div className="max-w-xs lg:max-w-none">
+                <Image
+                  src={avatarImage}
+                  alt="Stylized vaporwave portrait of a skull floating above an island"
+                  sizes="(min-width: 1024px) 32rem, 20rem"
+                  className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </Container>

@@ -6,6 +6,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  important: true,
   darkMode: 'class',
   theme: {
     extend: {
@@ -22,6 +23,8 @@ module.exports = {
       },
       backgroundImage: {
         topography: "url(../public/patterns/topography.svg)",
+        'topography-aquamarine': "url(../public/patterns/topography-aquamarine.svg)",
+        'topography-bright-pink': "url(../public/patterns/topography-bright-pink.svg)",
         'topography-sunglow': "url(../public/patterns/topography-sunglow.svg)"
       },
       screens: {
