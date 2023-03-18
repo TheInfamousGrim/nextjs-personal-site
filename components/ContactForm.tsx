@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 // Components
 import { Button } from './Button';
 import SuccessModal from './modals/SuccessModal';
+import ErrorModal from './modals/ErrorModal';
 
 // HOC
 import { SectionWrapper } from '@/hoc';
@@ -24,13 +25,18 @@ type ContactFormData = {
   message: string;
 };
 
+type ContactFormProps = {
+  emailjsPublicKey: string | undefined;
+  emailjsServiceID: string;
+  emailjsTemplateID: string;
+};
+
 type ErrorMessage = {
   errorMessage: string | undefined;
 };
 
 // Error Message
 function Error(error: ErrorMessage) {
-  console.log(error);
   return (
     <p
       role="alert"
@@ -45,7 +51,7 @@ function ContactForm() {
     register,
     reset,
     formState,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
     handleSubmit,
   } = useForm<ContactFormData>({
     mode: 'onChange',
@@ -53,16 +59,15 @@ function ContactForm() {
   });
   // Modal state
   const [successOpen, setSuccessOpen] = useState(false);
-  const [errorOpen, setErrorOpen] = useState(true);
+  const [errorOpen, setErrorOpen] = useState(false);
+  const [emailjsErrorMessage, setEmailjsErrorMessage] = useState('');
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log(JSON.stringify(data));
-    // setSubmitValue(data);
+  const onSubmit = async (data: ContactFormData) => {
     // connect to emailjs service
     emailjs
       .send(
-        'service_godqp55',
-        'template_0wjvcaw',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         {
           user_name: `${data.firstName} ${data.lastName}`,
           to_name: 'George',
@@ -70,15 +75,18 @@ function ContactForm() {
           to_email: 'finchergeorge1@gmail.com',
           message: data.message,
         },
-        'DlWDHZAAI3RXiqFg7'
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(
         function (response) {
-          console.log('SUCCESS', response.status, response.text);
           if (response.status === 200) setSuccessOpen(true);
         },
         function (error) {
-          console.log('FAILED..', error);
+          console.log('FAILED..', error.text);
+          if (error) {
+            setEmailjsErrorMessage(error.text);
+            setErrorOpen(true);
+          }
         }
       );
   };
@@ -94,6 +102,11 @@ function ContactForm() {
   return (
     <>
       <SuccessModal successOpen={successOpen} setSuccessOpen={setSuccessOpen} />
+      <ErrorModal
+        errorOpen={errorOpen}
+        setErrorOpen={setErrorOpen}
+        errorMessage={emailjsErrorMessage}
+      />
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="isolate flex-[0.75] rounded-3xl bg-space-cadet bg-topography-sunglow py-12 px-6"

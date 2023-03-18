@@ -1,7 +1,10 @@
 // Dependencies
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { CheckIcon } from '@heroicons/react/24/outline';
+import {
+  CheckIcon,
+  ExclamationTriangleIcon,
+} from '@heroicons/react/24/outline';
 
 // Components
 import { Button } from '../Button';
@@ -12,9 +15,10 @@ type ErrorModalTypes = {
   errorMessage: string;
 };
 
-export default function SuccessModal({
+export default function ErrorModal({
   errorOpen,
   setErrorOpen,
+  errorMessage,
 }: ErrorModalTypes) {
   return (
     <Transition.Root show={errorOpen} as={Fragment}>
@@ -44,9 +48,9 @@ export default function SuccessModal({
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                 <div>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
-                    <CheckIcon
-                      className="h-6 w-6 text-green-600"
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
+                    <ExclamationTriangleIcon
+                      className="h-6 w-6 text-red-600"
                       aria-hidden="true"
                     />
                   </div>
@@ -55,12 +59,18 @@ export default function SuccessModal({
                       as="h3"
                       className="text-base font-semibold leading-6 text-gray-900"
                     >
-                      🙌 Email successfully sent 🙌
+                      😭 An error occurred sending your email 😭
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                        Email has successfully been sent, I'll get in contact
-                        with you soon!
+                        {`${errorMessage}`}
+                      </p>
+                    </div>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-500">
+                        Please feel free to contact me directly through my
+                        email: finchergeorge1@gmail.com. Or DM me through
+                        either, twitter, linkedin or discord.
                       </p>
                     </div>
                   </div>

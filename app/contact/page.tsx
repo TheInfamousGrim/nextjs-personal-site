@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
+  // console.log(process.env);
   return (
     <>
       <Container className="mt-16 sm:mt-32">
