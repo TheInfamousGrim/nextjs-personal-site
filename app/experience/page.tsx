@@ -1,26 +1,30 @@
 'use client';
-
+// Dependencies
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
+// Stylesheets
 import 'react-vertical-timeline-component/style.min.css';
 
+// Logos
 import logoGSA from '@/public/logos/gsa.svg';
 import logoKomo from '@/public/logos/komo.svg';
 import logoAandF from '@/public/logos/A&F.svg';
 import logoUOB from '@/public/logos/university-of-birmingham.svg';
-import { textVariant } from '@/lib/motion';
+
+// Pattern
+import topographyAquamarine from '@/public/patterns/topography-aquamarine.svg';
 
 // Components
 import { Container } from '@/components/Container';
+import TechSection from '@/components/techSection/TechSection';
 
 // HOC
 import { SectionWrapper } from '@/hoc';
-import Tech from '@/components/Tech';
 
 const experiences = [
   {
@@ -86,13 +90,21 @@ interface ExperienceTypes {
   points: string[];
 }
 
+export const metadata: Metadata = {
+  title: 'Experience',
+  description: `Some information on the work I've done and the education I've received`,
+};
+
 function ExperienceCard({ experience }: { experience: ExperienceTypes }) {
   return (
     <VerticalTimelineElement
-      contentStyle={{ background: '#FB6A82', color: '#fff' }}
+      contentStyle={{
+        background: '#FB6A82',
+        color: '#fff',
+      }}
       contentArrowStyle={{ borderRight: '7px solid #fb6a82' }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{ background: experience.iconBg, borderColor: '#00FFAB' }}
       icon={
         <div className="flex h-full w-full items-center justify-center">
           <Image
@@ -132,10 +144,11 @@ function ExperienceCard({ experience }: { experience: ExperienceTypes }) {
 }
 
 function Experience() {
+  console.log(typeof topographyAquamarine.src);
   return (
     <>
       <Container className="mt-16 sm:mt-32">
-        <motion.div className="max-w-2xl" variants={textVariant()}>
+        <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             All The Cool Stuff I've{' '}
             <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-8xl">
@@ -147,7 +160,7 @@ function Experience() {
             A few more snippets about my education and how much I've picked up
             along the way .
           </p>
-        </motion.div>
+        </div>
       </Container>
       <Container className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#00FFAB">
@@ -160,12 +173,7 @@ function Experience() {
         </VerticalTimeline>
       </Container>
       <Container className="mt-16">
-        <motion.div className="maz-w-2xl" variants={textVariant()}>
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
-            Some of the Juicy Languages, Frameworks and Software I Use
-          </h2>
-        </motion.div>
-        <Tech />
+        <TechSection />
       </Container>
     </>
   );
