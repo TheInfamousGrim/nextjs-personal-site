@@ -38,11 +38,11 @@ function MailIcon(props: IconProps) {
     >
       <path
         d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+        className="fill-zinc-100 stroke-sunglow"
       />
       <path
         d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        className="stroke-sunglow"
       />
     </svg>
   );
@@ -61,11 +61,11 @@ function BriefcaseIcon(props: IconProps) {
     >
       <path
         d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+        className="fill-zinc-100 stroke-bright-pink"
       />
       <path
         d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        className="stroke-bright-pink"
       />
     </svg>
   );
@@ -85,7 +85,7 @@ function AcademicCap(props: IconProps) {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+        className="fill-zinc-100 stroke-aquamarine"
         d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
       />
     </svg>
@@ -125,30 +125,23 @@ function SocialLink({
 
 function GetInContact() {
   return (
-    <form action="/thank-you" className="rounded-2xl border border-sunglow p-6">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <div className="rounded-2xl border border-sunglow bg-space-cadet bg-topography-sunglow p-6">
+      <h2 className="flex rounded-md bg-[#ffffff33] p-2 text-sm font-semibold text-zinc-100 backdrop-blur-[10px]">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Get In Contact</span>
       </h2>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        If you'd like to contact me please feel free to fill in the form below.
+      <p className="mt-2 rounded-md bg-[#ffffff33] p-2 text-sm text-zinc-300 backdrop-blur-[10px]">
+        If you'd like to contact me, follow the link below and fill out the form
+        😁.
       </p>
-      <div className="mt-6 flex">
-        <input
-          type="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button
-          variant="secondary"
-          text="join"
-          type="button"
-          className="ml-4 flex-none"
-        ></Button>
-      </div>
-    </form>
+      <Button
+        href="/contact"
+        variant="primary"
+        text="Contact"
+        type="button"
+        className="mt-6 w-full"
+      ></Button>
+    </div>
   );
 }
 
@@ -174,29 +167,30 @@ function Resume() {
   ];
 
   return (
-    <div className="rounded-2xl border border-bright-pink p-6 ">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <div className="rounded-2xl border border-bright-pink bg-space-cadet bg-topography-bright-pink p-6">
+      <h2 className="flex rounded-md bg-[#ffffff33] p-2 text-sm font-semibold text-zinc-100 backdrop-blur-[10px]">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <li
+            key={roleIndex}
+            className="flex gap-4 rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px]"
+          >
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5">
               <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dd className="w-full flex-none text-sm font-medium text-zinc-200">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.title}
-              </dd>
+              <dd className="text-xs text-zinc-300">{role.title}</dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                className="ml-auto text-xs text-zinc-400"
                 aria-label={`${role.start} until ${role.end.label ?? role.end}`}
               >
                 <time dateTime={role.start}>{role.start}</time>{' '}
@@ -211,7 +205,7 @@ function Resume() {
       </ol>
       <Button
         href="https://docs.google.com/document/d/1tEmQaS4c8bL4XMCJ6XHtqHHp7zL62VOazIOmlQnm618/edit"
-        variant="secondary"
+        variant="primary"
         className="group mt-6 w-full"
         text="Download CV"
         icon={ArrowDownIcon({
@@ -260,33 +254,32 @@ function Education() {
   ];
 
   return (
-    <div className="rounded-2xl border border-aquamarine p-6">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <div className="rounded-2xl border border-aquamarine bg-space-cadet bg-topography-aquamarine p-6">
+      <h2 className="flex rounded-md bg-[#ffffff33] p-2 text-sm font-semibold text-zinc-100 backdrop-blur-[10px]">
         <AcademicCap className="h-6 w-6 flex-none" />
         <span className="ml-3">Education</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {education.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <li
+            key={roleIndex}
+            className="flex gap-4 rounded-md bg-[#ffffff33] p-2 shadow-md backdrop-blur-[10px]"
+          >
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5">
               <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
             </div>
             <dl className="flex flex-auto flex-col flex-wrap gap-x-2">
               <dt className="sr-only">University</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dd className="w-full flex-none text-sm font-medium text-zinc-100">
                 {role.school}
               </dd>
               <dt className="sr-only">Course</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.course}
-              </dd>
+              <dd className="text-xs text-zinc-300">{role.course}</dd>
               <dt className="sr-only">Grade</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.grade}
-              </dd>
+              <dd className="text-xs text-zinc-300">{role.grade}</dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="block text-xs text-zinc-400 dark:text-zinc-500"
+                className="block text-xs text-zinc-400"
                 aria-label={`${role.start} until ${role.end.label ?? role.end}`}
               >
                 <time dateTime={role.start}>{role.start}</time>{' '}
