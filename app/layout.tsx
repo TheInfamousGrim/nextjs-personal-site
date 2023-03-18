@@ -8,6 +8,7 @@ import Script from 'next/script';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { StarsCanvas } from '@/components/canvas/Stars';
+import HomeLoader from './loading';
 
 // theme Script
 const modeScript = `
