@@ -105,7 +105,7 @@ function ExperienceCard({ experience }: { experience: ExperienceTypes }) {
       }}
       contentArrowStyle={{ borderRight: '7px solid #fb6a82' }}
       date={experience.date}
-      dateClassName="rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px] text-zinc-800 dark:text-zinc-100 text-bold opacity-100"
+      dateClassName="rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px] text-zinc-100 lg:text-zinc-800 dark:text-zinc-100 text-bold opacity-100"
       iconStyle={{ background: experience.iconBg, borderColor: '#00FFAB' }}
       icon={
         <div className="flex h-full w-full items-center justify-center">
@@ -123,7 +123,7 @@ function ExperienceCard({ experience }: { experience: ExperienceTypes }) {
             {experience.title}
           </h3>
           <p
-            className="mt-1 max-w-2xl text-sm font-thin text-zinc-300"
+            className="mt-1 max-w-2xl text-sm font-thin text-zinc-100"
             style={{ margin: 0 }}
           >
             {experience.company_name}
