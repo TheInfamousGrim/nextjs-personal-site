@@ -15,7 +15,6 @@ import {
   illustrator,
   docker,
   threejs,
-  apiEcommerce,
 } from '../public/assets';
 
 const technologies = [
