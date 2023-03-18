@@ -117,28 +117,28 @@ export default function About() {
                 href="https://twitter.com/GrimFunk69"
                 icon={TwitterIcon}
               >
-                Follow on Twitter
+                @GrimFunk69
               </SocialLink>
               <SocialLink
                 href="https://github.com/TheInfamousGrim"
                 icon={GitHubIcon}
                 className="mt-4"
               >
-                Follow on GitHub
+                @TheInfamousGrim
               </SocialLink>
               <SocialLink
                 href="https://www.linkedin.com/in/george-fincher-aa7869214/"
                 icon={LinkedInIcon}
                 className="mt-4"
               >
-                Follow on LinkedIn
+                @george-fincher-aa7869214
               </SocialLink>
               <SocialLink
-                href="discordapp.com/users/GrimFunk#8985"
+                href="https://www.discordapp.com/users/GrimFunk#8985"
                 icon={DiscordIcon}
                 className="mt-4"
               >
-                Follow on Discord
+                @GrimFunk#8985
               </SocialLink>
               <SocialLink
                 href="mailto:finchergeorge1@gmail.com"
