@@ -20,7 +20,6 @@ import { Container } from '@/components/Container';
 
 // HOC
 import { SectionWrapper } from '@/hoc';
-import { ReactNode } from 'react';
 import Tech from '@/components/Tech';
 
 const experiences = [

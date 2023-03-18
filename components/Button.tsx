@@ -26,6 +26,7 @@ export interface ButtonTypes {
   text?: string;
   icon?: ReactNode;
   type?: 'button' | 'submit' | 'reset' | undefined;
+  onClick?: () => void;
 }
 
 export function Button({
@@ -49,13 +50,16 @@ export function Button({
   let buttonRef = useRef<HTMLAnchorElement | HTMLButtonElement>(null!);
 
   useEffect(() => {
-    // Get the curr
+    // Get the current button styles
     const buttonStyles =
       buttonRef.current && getComputedStyle(buttonRef.current);
 
+    // Select the glowing lines svg
     const glowLines = buttonRef.current.querySelectorAll('rect');
+    // Save the new rx value as the current border radius
     const rx = buttonStyles.borderRadius;
 
+    // Update the new rx value for each button
     glowLines.forEach((line) => {
       line.setAttribute('rx', rx);
     });
