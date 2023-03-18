@@ -360,7 +360,7 @@ export default function Home() {
                 <div className="relative">
                   <Image
                     src={gallery1}
-                    alt=""
+                    alt="psychedelic vaporwave artwork of a giant statue staring over an ocean"
                     className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -370,7 +370,7 @@ export default function Home() {
                 <div className="relative">
                   <Image
                     src={gallery2}
-                    alt=""
+                    alt="vaporwave side profile of a woman looking out at a distorted world"
                     className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -378,7 +378,7 @@ export default function Home() {
                 <div className="relative">
                   <Image
                     src={gallery3}
-                    alt=""
+                    alt="A crusty retrofutristic living room that has a window peering out into the psychedelic ocean"
                     className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -388,7 +388,7 @@ export default function Home() {
                 <div className="relative">
                   <Image
                     src={gallery4}
-                    alt=""
+                    alt="A piece of ground raised up with a statue of man composed of clay like grey matter"
                     className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -396,7 +396,7 @@ export default function Home() {
                 <div className="relative">
                   <Image
                     src={gallery5}
-                    alt=""
+                    alt="A phantasmagoric alien world where the stone appears almost cloudlike"
                     className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -410,7 +410,10 @@ export default function Home() {
         <HeroCard />
       </Container>
       <Container.Outer className="mt-9">
-        <Image src={widePicture} />
+        <Image
+          src={widePicture}
+          alt="A psychedelic greek side profile of an androgynous being against an ethereal backdrop"
+        />
       </Container.Outer>
       <Container className="mt-12 md:mt-14">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">

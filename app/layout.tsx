@@ -86,7 +86,7 @@ export default function RootLayout({
         />
         <link rel="manifest" href="./favicons/site.webmanifest" />
       </head>
-      <body className="flex h-full flex-col dark:bg-black">
+      <body className="flex h-full flex-col bg-[#12071f]">
         <StarsCanvas />
         <div className="fixed inset-0 flex justify-center sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
