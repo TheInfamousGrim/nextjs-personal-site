@@ -113,7 +113,7 @@ function ContactForm() {
         <div className="mx-auto max-w-xl rounded-md bg-[#ffffff33] p-2 backdrop-blur-[10px]">
           <p className="mt-2 text-lg leading-8 text-zinc-800">Get in touch.</p>
           <h2 className="bg-gradient-to-r from-sunglow to-bright-pink bg-clip-text text-3xl font-bold tracking-tight text-gray-900 text-transparent sm:text-4xl">
-            Say What's Up
+            {`Say What's Up`}
           </h2>
         </div>
         <form

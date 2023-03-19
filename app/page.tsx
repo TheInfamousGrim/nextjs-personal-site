@@ -327,12 +327,12 @@ export default function Home() {
                 </span>
               </h1>
               <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-                I’m George Fincher, a fullstack web developer specializing in
+                {`I’m George Fincher, a fullstack web developer specializing in
                 React and Next.js applications, based in Birmingham, UK. I’m a
                 Junior IT Executive at Aston & Fincher, where I design, develop
                 and implement our internal IT infrastructure and integrate
                 software that serves barbers, hairdressers and beauticians with
-                the products they need across the UK.
+                the products they need across the UK.`}
               </p>
               <div className="mt-6 flex gap-6">
                 <SocialLink

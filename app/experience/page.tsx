@@ -156,8 +156,8 @@ function Experience() {
             Along The Way
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            A few more snippets about my education and how much I've picked up
-            along the way .
+            {`A few more snippets about my education and how much I've picked up
+            along the way .`}
           </p>
         </div>
       </Container>
