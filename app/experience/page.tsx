@@ -1,4 +1,5 @@
 'use client';
+
 // Dependencies
 import {
   VerticalTimeline,
@@ -89,11 +90,6 @@ interface ExperienceTypes {
   date: string;
   points: string[];
 }
-
-export const metadata: Metadata = {
-  title: 'Experience',
-  description: `Some information on the work I've done and the education I've received`,
-};
 
 function ExperienceCard({ experience }: { experience: ExperienceTypes }) {
   return (
