@@ -142,8 +142,8 @@ function GetInContact() {
         <span className="ml-3">Get In Contact</span>
       </h2>
       <p className="mt-2 rounded-md bg-[#ffffff33] p-2 text-sm text-zinc-300 backdrop-blur-[10px]">
-        If you'd like to contact me, follow the link below and fill out the form
-        😁.
+        {`If you'd like to contact me, follow the link below and fill out the form
+        😁.`}
       </p>
       <Button
         href="/contact"
