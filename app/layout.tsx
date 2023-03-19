@@ -27,6 +27,7 @@ export const metadata: Metadata = {
         url: 'https://grimfunky.dev/og.jpg',
         width: 1920,
         height: 1080,
+        alt: `GrimFunky website's homepage showing the title, a short description, social links and a grid of pictures`,
       },
     ],
     locale: 'en-US',
@@ -46,9 +47,17 @@ export const metadata: Metadata = {
   twitter: {
     title: 'GrimFunky',
     card: 'summary_large_image',
-  },
-  icons: {
-    shortcut: '/favicons/favicon.ico',
+    description:
+      'GrimFunky AKA George Fincher. A fullstack react and nextjs developer.',
+    siteId: '1488897330451562507',
+    creator: '@grimfunk69',
+    creatorId: '1488897330451562507',
+    images: [
+      {
+        url: 'https://grimfunky.dev/og.jpg',
+        alt: `GrimFunky website's homepage showing the title, a short description, social links and a grid of pictures`,
+      },
+    ],
   },
 };
 
