@@ -1,4 +1,5 @@
 'use client';
+
 // Dependencies
 import {
   VerticalTimeline,

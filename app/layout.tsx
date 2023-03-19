@@ -16,6 +16,40 @@ export const metadata: Metadata = {
   },
   description:
     'GrimFunky AKA George Fincher. A fullstack react and nextjs developer.',
+  openGraph: {
+    title: 'GrimFunky',
+    description:
+      'GrimFunky AKA George Fincher. A fullstack react and nextjs developer.',
+    url: 'https://grimfunky.dev',
+    siteName: 'GrimFunky',
+    images: [
+      {
+        url: 'https://grimfunky.dev/og.jpg',
+        width: 1920,
+        height: 1080,
+      },
+    ],
+    locale: 'en-US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: 'GrimFunky',
+    card: 'summary_large_image',
+  },
+  icons: {
+    shortcut: '/favicons/favicon.ico',
+  },
 };
 
 export default function RootLayout({
