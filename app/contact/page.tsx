@@ -23,9 +23,9 @@ export default function Contact() {
             With Me If You Feel Like 😁
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm always open to new job opportunities or collaborating on some
+            {`I'm always open to new job opportunities or collaborating on some
             awesome new projects. Just fill out the form and I'll get back to
-            you 💪.
+            you 💪.`}
           </p>
         </div>
       </Container>

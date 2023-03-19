@@ -83,34 +83,34 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I like to think I've lived a storied life. I went to university
+                {`I like to think I've lived a storied life. I went to university
                 initially to study a masters in physics & came out with a
                 bachelors in film, drama, philosophy and mathematics. I then
                 went on to achieve an MFA in acting at Guildford School of
-                Acting.
+                Acting.`}
               </p>
               <p>
-                The pandemic was brutal, we all know that. It made me rethink
+                {`The pandemic was brutal, we all know that. It made me rethink
                 acting, so I got three separate jobs in the midst of all the
                 madness. But with determination, grit and vigour I ventured back
-                into the realm of programming.
+                into the realm of programming.`}
               </p>
               <p>
-                My programming journey earnestly began in 2020, with my first
+                {`My programming journey earnestly began in 2020, with my first
                 attempt at learning python. I gave up after a few months due to
-                the 80 hour work weeks and lack of free time...
+                the 80 hour work weeks and lack of free time...`}
               </p>
               <p>
-                In 2021 I realized I needed a goal, so I swapped languages to
+                {`In 2021 I realized I needed a goal, so I swapped languages to
                 HTML, CSS & Javascript so that I could build web applications &
-                fuel my learning with the dream of becoming a web developer.
+                fuel my learning with the dream of becoming a web developer.`}
               </p>
               <p>
-                2022 came around and I was still no closer to becoming a web
+                {`2022 came around and I was still no closer to becoming a web
                 developer. So I did what I thought was the best thing, I
                 enrolled at a boot camp at the University of Birmingham where I
                 went on to finish top of the class which leads us delightfully
-                to the present.
+                to the present.`}
               </p>
             </div>
           </div>

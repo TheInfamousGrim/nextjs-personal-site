@@ -58,8 +58,8 @@ export default function SuccessModal({
                     </Dialog.Title>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                        Email has successfully been sent, I'll get in contact
-                        with you soon!
+                        {`Email has successfully been sent, I'll get in contact
+                        with you soon!`}
                       </p>
                     </div>
                   </div>
