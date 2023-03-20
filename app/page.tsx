@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 
 // Components
 import { Button } from '@/components/Button';
-import { Container } from '@/components/Container';
+import { Container, OuterContainer } from '@/components/Container';
 import HeroCard from '@/components/HeroCard';
 import {
   DiscordIcon,
@@ -29,6 +29,7 @@ import gallery3 from '@/public/home-gallery/vaporwave-background-3.png';
 import gallery4 from '@/public/home-gallery/vaporwave-background-4.png';
 import gallery5 from '@/public/home-gallery/vaporwave-background-5.png';
 import widePicture from '@/public/home-gallery/vaporwave-wide-aspect.png';
+import { ReactNode } from 'react';
 
 interface IconProps {
   className?: string;
@@ -114,6 +115,8 @@ function ArrowDownIcon(props: IconProps) {
   );
 }
 
+type Icon = JSX.Element;
+
 type SocialLinkProps = {
   href?: string;
 };
@@ -121,9 +124,9 @@ type SocialLinkProps = {
 function SocialLink({
   icon: Icon,
   href,
-  ...props
+  props,
 }: {
-  icon: JSX.Element;
+  icon: Icon;
   href: string;
   props: SocialLinkProps;
 }) {
@@ -411,12 +414,12 @@ export default function Home() {
       <Container className="mt-9">
         <HeroCard />
       </Container>
-      <Container.Outer className="mt-9">
+      <OuterContainer className="mt-9">
         <Image
           src={widePicture}
           alt="A psychedelic greek side profile of an androgynous being against an ethereal backdrop"
         />
-      </Container.Outer>
+      </OuterContainer>
       <Container className="mt-12 md:mt-14">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <Education />

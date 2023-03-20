@@ -15,18 +15,13 @@ import avatarImage from '@/public/GrimFunk-psychadelic.png';
 import { ReactNode } from 'react';
 
 interface SocialLinkTypes {
-  className: string;
+  className?: string;
   href: string;
   children: ReactNode;
-  Icon: ReactNode;
+  Icon: React.JSXElementConstructor<any>;
 }
 
-function SocialLink({
-  className,
-  href,
-  children,
-  icon: Icon,
-}: SocialLinkTypes) {
+function SocialLink({ className, href, children, Icon }: SocialLinkTypes) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
@@ -118,34 +113,34 @@ export default function About() {
             <ul role="list" className="border-t border-aquamarine pt-8">
               <SocialLink
                 href="https://twitter.com/GrimFunk69"
-                icon={TwitterIcon}
+                Icon={TwitterIcon}
               >
                 @GrimFunk69
               </SocialLink>
               <SocialLink
                 href="https://github.com/TheInfamousGrim"
-                icon={GitHubIcon}
+                Icon={GitHubIcon}
                 className="mt-4"
               >
                 @TheInfamousGrim
               </SocialLink>
               <SocialLink
                 href="https://www.linkedin.com/in/george-fincher-aa7869214/"
-                icon={LinkedInIcon}
+                Icon={LinkedInIcon}
                 className="mt-4"
               >
                 @george-fincher-aa7869214
               </SocialLink>
               <SocialLink
                 href="https://www.discordapp.com/users/GrimFunk#8985"
-                icon={DiscordIcon}
+                Icon={DiscordIcon}
                 className="mt-4"
               >
                 @GrimFunk#8985
               </SocialLink>
               <SocialLink
                 href="mailto:finchergeorge1@gmail.com"
-                icon={MailIcon}
+                Icon={MailIcon}
                 className="mt-8 border-t border-aquamarine pt-8"
               >
                 finchergeorge1@gmail.com

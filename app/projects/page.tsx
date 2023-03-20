@@ -17,7 +17,6 @@ import screenshotFakebook from '@/public/assets/projects/fakebook.png';
 import screenshotMongoSocialAPI from '@/public/assets/projects/social-network.png';
 import screenshotTenzie from '@/public/assets/projects/tenzies.png';
 
-import { projectsTest } from '@/lib/constants';
 
 const projectsTest2 = [
   {

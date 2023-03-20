@@ -4,12 +4,12 @@ import clsx from 'clsx';
 interface SubContainerProps extends ComponentPropsWithRef<'div'> {
   className?: string;
   style?: React.CSSProperties;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export type Ref = HTMLDivElement;
 
-const OuterContainer = forwardRef<Ref, SubContainerProps>(
+export const OuterContainer = forwardRef<Ref, SubContainerProps>(
   function OuterContainer({ className, children, ...props }, ref) {
     return (
       <div ref={ref} className={clsx('sm:px-8', className)} {...props}>
@@ -19,7 +19,7 @@ const OuterContainer = forwardRef<Ref, SubContainerProps>(
   }
 );
 
-const InnerContainer = forwardRef<Ref, SubContainerProps>(
+export const InnerContainer = forwardRef<Ref, SubContainerProps>(
   function InnerContainer({ className, children, ...props }, ref) {
     return (
       <div
@@ -36,6 +36,8 @@ const InnerContainer = forwardRef<Ref, SubContainerProps>(
 export interface ContainerProps extends ComponentPropsWithRef<'div'> {
   className?: string;
   style?: React.CSSProperties;
+  Outer?: typeof OuterContainer;
+  Inner?: typeof InnerContainer;
 }
 
 export const Container = forwardRef<
