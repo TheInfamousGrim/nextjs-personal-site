@@ -140,6 +140,9 @@ function GetInContact() {
         {`If you'd like to contact me, follow the link below and fill out the form
         😁.`}
       </p>
+      <p className="mt-2 rounded-md bg-[#ffffff33] p-2 text-sm text-zinc-300 backdrop-blur-[10px]">
+        {`Or email me directly: george@grimfunky.dev`}
+      </p>
       <Button
         href="/contact"
         variant="primary"

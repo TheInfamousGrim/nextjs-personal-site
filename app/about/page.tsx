@@ -139,11 +139,11 @@ export default function About() {
                 @GrimFunk#8985
               </SocialLink>
               <SocialLink
-                href="mailto:finchergeorge1@gmail.com"
+                href="mailto:george@grimfunky.dev"
                 Icon={MailIcon}
                 className="mt-8 border-t border-aquamarine pt-8"
               >
-                finchergeorge1@gmail.com
+                george@grimfunky.dev
               </SocialLink>
             </ul>
             <div className="mt-8 border-t border-aquamarine pt-8">

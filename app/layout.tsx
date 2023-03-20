@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: 'GrimFunky',
     images: [
       {
-        url: 'https://grimfunky.dev/og.jpg',
+        url: 'https://www.grimfunky.dev/og.jpg',
         width: 1920,
         height: 1080,
         alt: `GrimFunky website's homepage showing the title, a short description, social links and a grid of pictures`,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     creatorId: '1488897330451562507',
     images: [
       {
-        url: 'https://grimfunky.dev/og.jpg',
+        url: 'https://www.grimfunky.dev/og.jpg',
         alt: `GrimFunky website's homepage showing the title, a short description, social links and a grid of pictures`,
       },
     ],
