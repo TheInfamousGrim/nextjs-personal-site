@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 import clsx from 'clsx';
-import { ReactNode, useRef, useEffect } from 'react';
+import { ReactNode, useRef, useEffect, LinkHTMLAttributes } from 'react';
 
 // Custom Css
 import styles from './Button.module.css';
@@ -47,57 +47,77 @@ export function Button({
   );
 
   // Get a reference of the buttons computed styles
-  let buttonRef = useRef<HTMLAnchorElement | HTMLButtonElement>(null!);
+  let buttonRef = useRef<HTMLButtonElement>(null);
+  let linkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
-    // Get the current button styles
-    const buttonStyles =
-      buttonRef.current && getComputedStyle(buttonRef.current);
+    let buttonStyles;
+    let glowLines;
+    let rx: string;
 
-    // Select the glowing lines svg
-    const glowLines = buttonRef.current.querySelectorAll('rect');
-    // Save the new rx value as the current border radius
-    const rx = buttonStyles.borderRadius;
-
-    // Update the new rx value for each button
-    glowLines.forEach((line) => {
-      line.setAttribute('rx', rx);
-    });
+    if (buttonRef.current) {
+      // Get the current button styles
+      buttonStyles = buttonRef.current && getComputedStyle(buttonRef.current);
+      // Select the glowing lines svg
+      glowLines = buttonRef.current.querySelectorAll('rect');
+      // Save the new rx value as the current border radius
+      rx = buttonStyles.borderRadius;
+      // Update the new rx value for each button
+      glowLines.forEach((line) => {
+        line.setAttribute('rx', rx);
+      });
+    }
+    if (linkRef.current) {
+      // Get the current button styles
+      buttonStyles = linkRef.current && getComputedStyle(linkRef.current);
+      // Select the glowing lines svg
+      glowLines = linkRef.current.querySelectorAll('rect');
+      // Save the new rx value as the current border radius
+      rx = buttonStyles.borderRadius;
+      // Update the new rx value for each button
+      glowLines.forEach((line) => {
+        line.setAttribute('rx', rx);
+      });
+    }
   }, []);
 
-  return href ? (
-    <Link ref={buttonRef} href={href} className={className} {...props}>
-      {text}
-      {icon}
-      <svg className={styles['glow-container']} data-glow-offset={true}>
-        <rect
-          pathLength={100}
-          strokeLinecap="round"
-          className={styles['glow-blur']}
-        ></rect>
-        <rect
-          pathLength={100}
-          strokeLinecap="round"
-          className={styles['glow-line']}
-        ></rect>
-      </svg>
-    </Link>
-  ) : (
-    <button ref={buttonRef} className={className} type={type} {...props}>
-      {text}
-      {icon}
-      <svg className={styles['glow-container']} data-glow-offset={true}>
-        <rect
-          pathLength={100}
-          strokeLinecap="round"
-          className={styles['glow-blur']}
-        ></rect>
-        <rect
-          pathLength={100}
-          strokeLinecap="round"
-          className={styles['glow-line']}
-        ></rect>
-      </svg>
-    </button>
-  );
+  if (href) {
+    return (
+      <Link ref={linkRef} href={href} className={className} {...props}>
+        {text}
+        {icon}
+        <svg className={styles['glow-container']} data-glow-offset={true}>
+          <rect
+            pathLength={100}
+            strokeLinecap="round"
+            className={styles['glow-blur']}
+          ></rect>
+          <rect
+            pathLength={100}
+            strokeLinecap="round"
+            className={styles['glow-line']}
+          ></rect>
+        </svg>
+      </Link>
+    );
+  } else {
+    return (
+      <button ref={buttonRef} className={className} type={type} {...props}>
+        {text}
+        {icon}
+        <svg className={styles['glow-container']} data-glow-offset={true}>
+          <rect
+            pathLength={100}
+            strokeLinecap="round"
+            className={styles['glow-blur']}
+          ></rect>
+          <rect
+            pathLength={100}
+            strokeLinecap="round"
+            className={styles['glow-line']}
+          ></rect>
+        </svg>
+      </button>
+    );
+  }
 }

@@ -1,7 +1,7 @@
 'use client';
 
 // Dependencies
-import { Fragment, useEffect, useRef, ReactNode } from 'react';
+import { Fragment, useEffect, useRef, ReactNode, CSSProperties } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -265,9 +265,11 @@ function clamp(number: number, a: number, b: number) {
 
 function AvatarContainer({
   className,
+  children,
   ...props
 }: {
   className?: string;
+  children?: ReactNode;
   style?: React.CSSProperties;
 }) {
   return (
@@ -277,7 +279,9 @@ function AvatarContainer({
         'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
       )}
       {...props}
-    />
+    >
+      {children}
+    </div>
   );
 }
 
@@ -309,6 +313,11 @@ function Avatar({
       />
     </Link>
   );
+}
+
+// Extend CSSProperties for with custom properties
+export interface CustomCSSProperties extends CSSProperties {
+  position: 'sticky';
 }
 
 export function Header() {
@@ -414,6 +423,10 @@ export function Header() {
     };
   }, [isHomePage]);
 
+  interface CSSPropertiesWithVars extends CSSProperties {
+    position: any;
+  }
+
   return (
     <>
       <header
@@ -431,11 +444,17 @@ export function Header() {
             />
             <Container
               className="top-0 order-last -mb-3 pt-3"
-              style={{ position: 'var(--header-position)' }}
+              style={
+                { position: 'var(--header-position)' } as CSSPropertiesWithVars
+              }
             >
               <div
                 className="top-[var(--avatar-top,theme(spacing.3))] w-full"
-                style={{ position: 'var(--header-inner-position)' }}
+                style={
+                  {
+                    position: 'var(--header-inner-position)',
+                  } as CSSPropertiesWithVars
+                }
               >
                 <div className="relative">
                   <AvatarContainer
@@ -458,11 +477,17 @@ export function Header() {
         <div
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
-          style={{ position: 'var(--header-position)' }}
+          style={
+            { position: 'var(--header-position)' } as CSSPropertiesWithVars
+          }
         >
           <Container
             className="top-[var(--header-top,theme(spacing.6))] w-full"
-            style={{ position: 'var(--header-inner-position)' }}
+            style={
+              {
+                position: 'var(--header-inner-position)',
+              } as CSSPropertiesWithVars
+            }
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">

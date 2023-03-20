@@ -12,7 +12,7 @@ import { StarsCanvas } from '@/components/canvas/Stars';
 export const metadata: Metadata = {
   title: {
     default: 'GrimFunky',
-    template: '% | GrimFunky',
+    template: '%s | GrimFunky',
   },
   description:
     'GrimFunky AKA George Fincher. A fullstack react and nextjs developer.',

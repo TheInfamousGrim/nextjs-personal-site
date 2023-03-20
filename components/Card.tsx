@@ -1,10 +1,6 @@
 import Link from 'next/link';
 import clsx from 'clsx';
-import {
-  ReactNode,
-  ComponentPropsWithoutRef,
-  JSXElementConstructor,
-} from 'react';
+import { ReactNode, ComponentPropsWithoutRef, ElementType } from 'react';
 
 interface IconPropsTypes extends ComponentPropsWithoutRef<'svg'> {
   className?: string;
@@ -24,11 +20,11 @@ function ChevronRightIcon(props?: IconPropsTypes) {
 }
 
 export function Card({
-  Component = 'div',
+  as: Component = 'div',
   className,
   children,
 }: {
-  Component: string;
+  as?: ElementType;
   className?: string;
   children: ReactNode;
 }) {
@@ -65,21 +61,24 @@ Card.Link = function CardLink({
   );
 };
 
-Card.Title = function CardTitle({
-  Component = 'h2',
+export function CardTitle({
   href,
   children,
+  as: Component = 'h3',
 }: {
-  children: string;
-  Component: string;
-  href: string;
+  children?: string;
+  href?: string;
+  as?: ElementType;
 }) {
   return (
-    <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+    <Component
+      as="h3"
+      className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100"
+    >
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   );
-};
+}
 
 Card.Description = function CardDescription({
   children,
@@ -106,13 +105,13 @@ Card.Cta = function CardCta({ children }: { children: ReactNode }) {
 };
 
 Card.Eyebrow = function CardEyebrow({
-  Component = 'p',
+  as: Component = 'p',
   decorate = false,
   className,
   children,
   ...props
 }: {
-  Component: string;
+  as?: ElementType;
   decorate: boolean;
   className: string;
   children: ReactNode;

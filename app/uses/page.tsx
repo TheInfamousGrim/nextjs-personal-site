@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import { Card } from '@/components/Card';
+import { Card, CardTitle } from '@/components/Card';
 import { Section } from '@/components/Section';
 import { SimpleLayout } from '@/components/SimpleLayout';
 
@@ -28,11 +28,8 @@ interface ToolTypes {
 
 function Tool({ logo, title, children }: ToolTypes) {
   return (
-    <Card Component="li">
-      <Card.Title as="h3">
-        {logo}
-        {`  ${title}`}
-      </Card.Title>
+    <Card as="li">
+      <CardTitle as="h3">{logo ? `${logo}  ${title}` : title}</CardTitle>
       <Card.Description>{children}</Card.Description>
     </Card>
   );

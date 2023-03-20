@@ -115,23 +115,15 @@ function ArrowDownIcon(props: IconProps) {
   );
 }
 
-type Icon = JSX.Element;
-
-type SocialLinkProps = {
-  href?: string;
-};
-
 function SocialLink({
-  icon: Icon,
+  Icon,
   href,
-  props,
 }: {
-  icon: Icon;
+  Icon: React.JSXElementConstructor<any>;
   href: string;
-  props: SocialLinkProps;
 }) {
   return (
-    <Link className="group -m-1 p-1" href={href} {...props}>
+    <Link className="group -m-1 p-1" href={href}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-aquamarine dark:fill-zinc-400" />
     </Link>
   );
@@ -176,7 +168,10 @@ function Resume() {
       title: 'Bar Manager',
       logo: logoKomo,
       start: '2019',
-      end: '2021',
+      end: {
+        label: '2021',
+        dateTime: '2021',
+      },
     },
   ];
 
@@ -294,13 +289,11 @@ function Education() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="block text-xs text-zinc-400"
-                aria-label={`${role.start} until ${role.end.label ?? role.end}`}
+                aria-label={`${role.start} until ${role.end}`}
               >
                 <time dateTime={role.start}>{role.start}</time>{' '}
                 <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
-                </time>
+                <time dateTime={role.end}>{role.end}</time>
               </dd>
             </dl>
           </li>
@@ -341,22 +334,22 @@ export default function Home() {
                 <SocialLink
                   href="https://twitter.com/GrimFunk69"
                   aria-label="Follow on Twitter"
-                  icon={TwitterIcon}
+                  Icon={TwitterIcon}
                 />
                 <SocialLink
                   href="https://github.com/TheInfamousGrim"
                   aria-label="Follow on GitHub"
-                  icon={GitHubIcon}
+                  Icon={GitHubIcon}
                 />
                 <SocialLink
                   href="https://www.linkedin.com/in/george-fincher-aa7869214/"
                   aria-label="Follow on LinkedIn"
-                  icon={LinkedInIcon}
+                  Icon={LinkedInIcon}
                 />
                 <SocialLink
                   href="https://www.discordapp.com/users/GrimFunk#8985"
                   aria-label="Follow on Discord"
-                  icon={DiscordIcon}
+                  Icon={DiscordIcon}
                 />
               </div>
             </div>

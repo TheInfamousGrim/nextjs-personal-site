@@ -42,14 +42,16 @@ export interface ContainerProps extends ComponentPropsWithRef<'div'> {
 
 export const Container = forwardRef<
   Ref,
-  { children?: ReactNode; props: ContainerProps }
->(function Container({ children, ...props }, ref) {
+  {
+    children?: ReactNode;
+    className?: string;
+    style?: React.CSSProperties;
+    props?: ContainerProps;
+  }
+>(function Container({ children, className, ...props }, ref) {
   return (
-    <OuterContainer ref={ref} {...props}>
+    <OuterContainer ref={ref} className={className} {...props}>
       <InnerContainer>{children}</InnerContainer>
     </OuterContainer>
   );
 });
-
-Container.Outer = OuterContainer;
-Container.Inner = InnerContainer;

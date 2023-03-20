@@ -61,9 +61,21 @@ function ContactForm() {
   const [successOpen, setSuccessOpen] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
   const [emailjsErrorMessage, setEmailjsErrorMessage] = useState('');
+  console.log('hello');
+  console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
 
   const onSubmit = async (data: ContactFormData) => {
-    // connect to emailjs service
+    if (
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID === undefined ||
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID === undefined ||
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID === undefined
+    ) {
+      setEmailjsErrorMessage(
+        'EmailJS credentials are incorrect please contact me using any of my socials or directly using my email address'
+      );
+      return;
+    }
+
     emailjs
       .send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
