@@ -142,7 +142,7 @@ Please follow the contribution guidelines!
 
 <img src="https://avatars.githubusercontent.com/u/89855075?v=4" alt="TheInfamousGrim">
 
-Any feedback please email [George Fincher](mailto:finchergeorge1@gmail.com)
+Any feedback please email [George Fincher](mailto:george@grimfunky.dev)
 
 ## Socials
 
