@@ -66,7 +66,7 @@ export function CardTitle({
   children,
   as: Component = 'h3',
 }: {
-  children?: string;
+  children?: string | ReactNode;
   href?: string;
   as?: ElementType;
 }) {

@@ -27,12 +27,24 @@ interface ToolTypes {
 }
 
 function Tool({ logo, title, children }: ToolTypes) {
-  return (
-    <Card as="li">
-      <CardTitle as="h3">{logo ? `${logo}  ${title}` : title}</CardTitle>
-      <Card.Description>{children}</Card.Description>
-    </Card>
-  );
+  if (logo) {
+    return (
+      <Card as="li">
+        <CardTitle as="h3">
+          {logo}
+          {` ${title}`}
+        </CardTitle>
+        <Card.Description>{children}</Card.Description>
+      </Card>
+    );
+  } else {
+    return (
+      <Card as="li">
+        <CardTitle as="h3">{title}</CardTitle>
+        <Card.Description>{children}</Card.Description>
+      </Card>
+    );
+  }
 }
 
 function HighLightedWord() {
