@@ -216,7 +216,7 @@ function Resume() {
         ))}
       </ol>
       <Button
-        href="https://docs.google.com/document/d/1tEmQaS4c8bL4XMCJ6XHtqHHp7zL62VOazIOmlQnm618/edit"
+        href="https://docs.google.com/document/d/1tEmQaS4c8bL4XMCJ6XHtqHHp7zL62VOazIOmlQnm618/edit?usp=sharing"
         variant="primary"
         className="group mt-6 w-full"
         text="Download CV"
