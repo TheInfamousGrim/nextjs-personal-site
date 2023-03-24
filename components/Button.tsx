@@ -23,6 +23,7 @@ export interface ButtonTypes {
   variant?: string;
   className?: string;
   href?: string;
+  download?: string;
   text?: string;
   icon?: ReactNode;
   type?: 'button' | 'submit' | 'reset' | undefined;

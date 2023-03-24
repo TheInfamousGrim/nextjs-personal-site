@@ -29,7 +29,6 @@ import gallery3 from '@/public/home-gallery/vaporwave-background-3.png';
 import gallery4 from '@/public/home-gallery/vaporwave-background-4.png';
 import gallery5 from '@/public/home-gallery/vaporwave-background-5.png';
 import widePicture from '@/public/home-gallery/vaporwave-wide-aspect.png';
-import { ReactNode } from 'react';
 
 interface IconProps {
   className?: string;
@@ -216,7 +215,8 @@ function Resume() {
         ))}
       </ol>
       <Button
-        href="https://docs.google.com/document/d/1tEmQaS4c8bL4XMCJ6XHtqHHp7zL62VOazIOmlQnm618/edit?usp=sharing"
+        href="./CV/george-fincher-CV.pdf"
+        download="george-fincher-CV.pdf"
         variant="primary"
         className="group mt-6 w-full"
         text="Download CV"
