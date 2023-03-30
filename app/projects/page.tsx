@@ -16,7 +16,7 @@ import screenshotEcommerceDatabase from '@/public/assets/projects/api-ecommerce.
 import screenshotFakebook from '@/public/assets/projects/fakebook.png';
 import screenshotMongoSocialAPI from '@/public/assets/projects/social-network.png';
 import screenshotTenzie from '@/public/assets/projects/tenzies.png';
-
+import screenshotTwooter from '@/public/assets/projects/twooter-t3.png';
 
 const projectsTest2 = [
   {
@@ -52,6 +52,32 @@ const projectsTest2 = [
     image: screenshotFakebook,
     logo: logoFakebook,
     sourceCodeLink: 'https://github.com/TheInfamousGrim/Fakebook',
+  },
+  {
+    name: 'Twooter',
+    description:
+      'A twitter clone made using the t3 stack. I loved working on this one as I got a deep dive on how mono repos work and it was my first time using tRPC as an API',
+    tags: [
+      {
+        name: 'React',
+        color: 'text-aquamarine',
+      },
+      {
+        name: 'NextJS',
+        color: 'text-black',
+      },
+      {
+        name: 'tRPC',
+        color: 'text-aquamarine',
+      },
+      {
+        name: 'MySQL',
+        color: 'text-cyan-600',
+      },
+    ],
+    image: screenshotTwooter,
+    logo: logoFakebook,
+    sourceCodeLink: 'https://github.com/TheInfamousGrim/twitter-t3-clone',
   },
   {
     name: 'Tenzie Game',
@@ -155,56 +181,6 @@ const projectsTest2 = [
     logo: logoCumulo,
     sourceCodeLink:
       'https://github.com/TheInfamousGrim/cumulo-weather-dashboard',
-  },
-];
-
-const projects = [
-  {
-    name: 'Fakebook',
-    description: 'A facebook clone I was project lead on for my course.',
-    link: {
-      href: 'https://github.com/TheInfamousGrim/Fakebook',
-      label: 'github.com',
-    },
-    logo: logoFakebook,
-  },
-  {
-    name: 'Tenzie Game',
-    description: 'A fun game of tenzies I made.',
-    link: {
-      href: 'https://tenzies-game-react-ten.vercel.app/',
-      label: 'github.com',
-    },
-    logo: logoTenzie,
-  },
-  {
-    name: 'Mongo Social Network API',
-    description:
-      'A groovy lil API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list.',
-    link: {
-      href: 'https://github.com/TheInfamousGrim/NoSQL-Social-Network-API',
-      label: 'github.com',
-    },
-    logo: logoMongoSocialAPI,
-  },
-  {
-    name: 'Ecommerce Server',
-    description: 'A complete backend server for an ecommerce store',
-    link: {
-      href: 'https://github.com/TheInfamousGrim/orm-e-commerce-back-end',
-      label: 'github.com',
-    },
-    logo: logoEcommerceDatabase,
-  },
-  {
-    name: 'Cumulo',
-    description:
-      'A neat weather dashboard to show the weather in your location as well as one that is searched',
-    link: {
-      href: 'https://github.com/TheInfamousGrim/cumulo-weather-dashboard',
-      label: 'github.com',
-    },
-    logo: logoCumulo,
   },
 ];
 
