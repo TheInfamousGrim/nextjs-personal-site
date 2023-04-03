@@ -43,7 +43,7 @@
     "react-hook-form": "^7.43.8",
     "react-tilty": "^3.0.0",
     "react-vertical-timeline-component": "^3.6.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.3"
   },
   "devDependencies": {
     "@types/react-vertical-timeline-component": "^3.3.3",
