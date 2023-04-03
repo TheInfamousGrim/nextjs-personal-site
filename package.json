@@ -34,7 +34,7 @@
     "devicon": "^2.15.1",
     "eslint": "^8.36.0",
     "eslint-config-next": "^13.2.4",
-    "framer-motion": "^10.2.5",
+    "framer-motion": "^10.10.0",
     "maath": "^0.5.3",
     "next": "^13.2.4",
     "postcss-focus-visible": "^8.0.2",
