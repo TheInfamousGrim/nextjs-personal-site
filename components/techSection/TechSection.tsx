@@ -1,3 +1,4 @@
+'use client';
 // Dependencies
 import { motion } from 'framer-motion';
 
