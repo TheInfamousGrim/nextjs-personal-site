@@ -9,6 +9,7 @@ import logoEcommerceDatabase from '@/public/logos/ecommerce-database.svg';
 import logoFakebook from '@/public/logos/fakebook.svg';
 import logoMongoSocialAPI from '@/public/logos/mongo-social-api.svg';
 import logoTenzie from '@/public/logos/tenzie.svg';
+import logoTwooter from '@/public/logos/twooter.svg';
 
 /* --------------------------- images for projects -------------------------- */
 import screenshotCumulo from '@/public/assets/projects/cumulo.png';
@@ -74,9 +75,13 @@ const projectsTest2 = [
         name: 'MySQL',
         color: 'text-cyan-600',
       },
+      {
+        name: 'Redis',
+        color: 'text-red-600',
+      },
     ],
     image: screenshotTwooter,
-    logo: logoFakebook,
+    logo: logoTwooter,
     sourceCodeLink: 'https://github.com/TheInfamousGrim/twitter-t3-clone',
   },
   {
