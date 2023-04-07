@@ -8,7 +8,49 @@ import TechSection from '@/components/techSection/TechSection';
 
 export const metadata: Metadata = {
   title: 'Experience',
-  description: 'My experience as a web developer',
+  description: 'My experience as a web developer and a working professional',
+  openGraph: {
+    title: 'Experience | GrimFunky',
+    description: 'My experience as a web developer and working professional',
+    url: 'https://grimfunky.dev/experience',
+    siteName: 'GrimFunky',
+    images: [
+      {
+        url: 'https://www.grimfunky.dev/og.jpg',
+        width: 1920,
+        height: 1080,
+        alt: `GrimFunky website's homepage showing the title, a short description, social links and a grid of pictures`,
+      },
+    ],
+    locale: 'en-US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    title: 'Experience | GrimFunky',
+    card: 'summary_large_image',
+    description:
+      'GrimFunky AKA George Fincher. A fullstack react and nextjs developer.',
+    siteId: '1488897330451562507',
+    creator: '@grimfunk69',
+    creatorId: '1488897330451562507',
+    images: [
+      {
+        url: 'https://www.grimfunky.dev/og.jpg',
+        alt: `GrimFunky website's homepage showing the title, a short description, social links and a grid of pictures`,
+      },
+    ],
+  },
 };
 
 export default function Experience() {
