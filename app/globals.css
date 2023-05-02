@@ -78,6 +78,12 @@
   z-index: 2;
 }
 
+@media only screen and (max-width: 640px) {
+  .card-content {
+    width: 100%;
+  }
+}
+
 .card-subtitle-word {
   display: inline-block;
   margin: 0vmin 0.3vmin;
