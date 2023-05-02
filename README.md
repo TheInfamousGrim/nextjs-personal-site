@@ -74,7 +74,7 @@ Link to live application: [Click here](https://www.grimfunky.dev/)
 
 Please follow these steps to use the application locally
 
-1. Spin up a developer server using Vite.
+1. Spin up a developer server using webpack.
 
    - `npm run dev`
 
@@ -108,7 +108,7 @@ The technologies used for the development of this app were:
 
 ## Features
 
-- SSR.
+- SSR & SSG.
 - Built using nextjs.
 - Tailwind classes so there's no conflicting css.
 - Using React Three Fiber to create 3D effects.
