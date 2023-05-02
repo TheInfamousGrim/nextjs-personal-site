@@ -128,9 +128,9 @@ export default function RootLayout({
             <div className="w-full bg-white ring-1 ring-aquamarine dark:bg-zinc-900"></div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative overflow-x-visible">
           <Header />
-          <main>{children}</main>
+          <main className="w-screen">{children}</main>
           <Footer />
         </div>
       </body>
