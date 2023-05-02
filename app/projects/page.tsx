@@ -60,6 +60,10 @@ const projectsTest2 = [
       'A twitter clone made using the t3 stack. I loved working on this one as I got a deep dive on how mono repos work and it was my first time using tRPC as an API',
     tags: [
       {
+        name: 'TypeScript',
+        color: 'text-blue-400',
+      },
+      {
         name: 'React',
         color: 'text-aquamarine',
       },
