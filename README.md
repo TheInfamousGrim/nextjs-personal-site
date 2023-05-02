@@ -42,7 +42,7 @@ I also learned how to use:
 
 ### Web App Screenshot
 
-![Just another text editor web application screenshot](./public/og.jpg)
+![Home page for GrimFunky's portfolio](./public/og.jpg)
 
 ## Installation
 
