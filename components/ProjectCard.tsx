@@ -33,13 +33,7 @@ export default function ProjectCard({
 }: ProjectCardTypes) {
   return (
     <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
-      <Tilty
-        scale={1.05}
-        max={25}
-        speed={350}
-        style={{ transformStyle: 'preserve-3d' }}
-        className="group relative flex h-full flex-col items-start rounded-2xl border border-sunglow bg-space-cadet bg-topography-sunglow p-5 shadow-xl"
-      >
+      <div className="group relative flex h-full flex-col items-start rounded-2xl border border-sunglow bg-space-cadet bg-topography-sunglow p-5 shadow-xl">
         <div className="relative h-[230px] w-full">
           <img
             src={image.src}
@@ -51,13 +45,14 @@ export default function ProjectCard({
             <Link
               href={sourceCodeLink}
               //   onClick={() => window.open(sourceCodeLink, '_blank')}
-              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gradient-to-tr from-slate-600 to-slate-900"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-gradient-to-tr from-slate-600 to-slate-900 transition-all duration-200 ease-in hover:h-12 hover:w-12"
             >
               <img
                 src={github.src}
                 alt="source code"
                 className="h-5/6 w-5/6 object-contain"
               />
+              <h3 className="sr-only">Link to {name} source code on GitHub</h3>
             </Link>
           </div>
         </div>
@@ -84,7 +79,7 @@ export default function ProjectCard({
             </p>
           ))}
         </div>
-      </Tilty>
+      </div>
     </motion.div>
   );
 }
