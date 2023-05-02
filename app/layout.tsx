@@ -67,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="w-full">
       <head>
         <Script id="set-theme">{`
           let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -123,7 +123,7 @@ export default function RootLayout({
       </head>
       <body className="flex h-full flex-col bg-[#12071f]">
         <StarsCanvas />
-        <div className="fixed inset-0 flex justify-center sm:px-8">
+        <div className="fixed inset-0 flex w-screen justify-center overflow-x-hidden sm:px-8">
           <div className="flex w-full max-w-7xl lg:px-8">
             <div className="w-full bg-white ring-1 ring-aquamarine dark:bg-zinc-900"></div>
           </div>
