@@ -33,7 +33,7 @@
     "clsx": "^1.2.1",
     "devicon": "^2.15.1",
     "eslint": "^8.38.0",
-    "eslint-config-next": "^13.2.4",
+    "eslint-config-next": "^13.4.6",
     "framer-motion": "^10.10.0",
     "maath": "^0.5.3",
     "next": "^13.2.4",
