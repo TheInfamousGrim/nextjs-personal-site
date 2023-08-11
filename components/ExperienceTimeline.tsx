@@ -8,7 +8,7 @@ import {
 import Image from 'next/image';
 
 // Logos
-import logoGSA from '@/public/logos/gsa.svg';
+import logoGSF from '@/public/logos/gsf-logo.svg';
 import logoKomo from '@/public/logos/komo.svg';
 import logoAandF from '@/public/logos/A&F.svg';
 import logoUOB from '@/public/logos/university-of-birmingham.svg';
@@ -20,19 +20,6 @@ import 'react-vertical-timeline-component/style.min.css';
 import topographyAquamarine from '@/public/patterns/topography-aquamarine.svg';
 
 const experiences = [
-  {
-    title: '💀 Acting Student 🎭',
-    company_name: 'Guildford School of Acting',
-    icon: logoGSA,
-    iconBg: '#000000',
-    date: 'Sep 2018 - Jul 2020',
-    points: [
-      'Top drama school in the country.',
-      'Rigourous study and rehearsal periods of up 60-70 hours a week.',
-      'Gained a great understanding of Laban, Meisner, Adler and countless other practitioners and their praxis.',
-      'Made some life long friends in the acing industry that I cherish to this day.',
-    ],
-  },
   {
     title: '🍹 Bar Manager and Mixologist ⚗️',
     company_name: 'Komo Cocktail Bar',
@@ -70,6 +57,18 @@ const experiences = [
       'Lead all 3 group projects, helping to deliver aesthetic, performant applications that I am still tinkering with today.',
       'Was always willing to help out after hours with anyone that was struggling on the course.',
       'Further developed my love and passion for web dev 💖.',
+    ],
+  },
+  {
+    title: '👨‍💻 Software Engineer 💽',
+    company_name: 'GSF Car Parts',
+    icon: logoGSF,
+    iconBg: '#ED1C24',
+    date: 'Jun 2022 - Present',
+    points: [
+      'Working on the company applications, helping to deliver new features and maintain the current codebase.',
+      'Moving fast 💨 with a team of 10+ developers, helping to deliver aesthetic, performant applications that that are used by thousands of customers and peers.',
+      'Collaborating in an agile environment.',
     ],
   },
 ];

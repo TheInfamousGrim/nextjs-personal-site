@@ -19,6 +19,7 @@ import logoAAndF from '../public/logos/A&F.svg';
 import logoKomo from '../public/logos/komo.svg';
 import logoUOB from '../public/logos/university-of-birmingham.svg';
 import logoGSA from '../public/logos/gsa.svg';
+import logoGSF from '../public/logos/gsf-logo.svg';
 import logoUOE from '../public/logos/university-of-exeter.svg';
 import logoBuckland from '../public/logos/west-buckland.svg';
 
@@ -156,13 +157,23 @@ function GetInContact() {
 function Resume() {
   let resume = [
     {
+      company: 'GSF Car Parts',
+      title: 'Software Engineer',
+      logo: logoGSF,
+      start: '2022',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear().toString(),
+      },
+    },
+    {
       company: 'Aston & Fincher',
       title: 'Junior IT Executive',
       logo: logoAAndF,
       start: '2021',
       end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
+        label: '2023',
+        dateTime: '2023',
       },
     },
     {
