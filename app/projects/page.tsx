@@ -7,6 +7,7 @@ import { SimpleLayout } from '@/components/SimpleLayout';
 import logoCumulo from '@/public/logos/cumulo.svg';
 import logoEcommerceDatabase from '@/public/logos/ecommerce-database.svg';
 import logoFakebook from '@/public/logos/fakebook.svg';
+import logoGsf from '@/public/logos/gsf-logo.svg';
 import logoMongoSocialAPI from '@/public/logos/mongo-social-api.svg';
 import logoTenzie from '@/public/logos/tenzie.svg';
 import logoTwooter from '@/public/logos/twooter.svg';
@@ -15,11 +16,74 @@ import logoTwooter from '@/public/logos/twooter.svg';
 import screenshotCumulo from '@/public/assets/projects/cumulo.png';
 import screenshotEcommerceDatabase from '@/public/assets/projects/api-ecommerce.png';
 import screenshotFakebook from '@/public/assets/projects/fakebook.png';
+import screenshotGsfTradeApp from '@/public/assets/projects/gsf-trade-app.png';
 import screenshotMongoSocialAPI from '@/public/assets/projects/social-network.png';
 import screenshotTenzie from '@/public/assets/projects/tenzies.png';
 import screenshotTwooter from '@/public/assets/projects/twooter-t3.png';
 
-const projectsTest2 = [
+const professionalProjects = [
+  {
+    name: 'GSF Trade App',
+    description:
+      'A full stack nextjs app for use by mechanic and trade customers as well as our branch staff. Users can view selected car information, applicated car parts, orders, invoices and much more.',
+    tags: [
+      {
+        name: 'JavaScript',
+        color: 'text-sunglow',
+      },
+      {
+        name: 'TypeScript',
+        color: 'text-blue-400',
+      },
+      {
+        name: 'React',
+        color: 'text-aquamarine',
+      },
+      {
+        name: 'NextJS',
+        color: 'text-black',
+      },
+      {
+        name: 'MySQL',
+        color: 'text-cyan-600',
+      },
+      {
+        name: 'Zustand',
+        color: 'text-black',
+      },
+    ],
+    image: screenshotGsfTradeApp,
+    logo: logoGsf,
+    appLink: 'https://trade.gsfcarparts.com/',
+  },
+  {
+    name: 'GSF API',
+    description:
+      'A RESTful API for use by the NextJs GSF Trade App, National Accounts such as Kwik Fit and Halfords, and other external and internal applications.',
+    tags: [
+      {
+        name: 'C#',
+        color: 'text-purple-400',
+      },
+      {
+        name: 'ASP.NET Core',
+        color: 'text-violet-400',
+      },
+      {
+        name: 'MySQL',
+        color: 'text-cyan-600',
+      },
+      {
+        name: 'Swagger',
+        color: 'text-lime-400',
+      },
+    ],
+    image: screenshotEcommerceDatabase,
+    logo: logoGsf,
+  },
+];
+
+const personalProjects = [
   {
     name: 'Fakebook',
     description:
@@ -193,21 +257,6 @@ const projectsTest2 = [
   },
 ];
 
-interface LinkIconProps {
-  className: string;
-}
-
-function LinkIcon(props: LinkIconProps) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
 function HighLightedWord() {
   return (
     <span className="bg-gradient-to-r from-aquamarine to-bright-pink bg-clip-text text-6xl text-transparent sm:text-8xl">
@@ -228,8 +277,19 @@ export default function Projects() {
       title="All The Groovy Things That I've Made Over The Years"
       intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Check out the repos and live links if you like them 🥰."
     >
-      <div className="mt-20 grid grid-cols-1 gap-x-6 gap-y-16 tablet:grid-cols-2 xl:grid-cols-3">
-        {projectsTest2.map((project, index) => (
+      <h2 className="text-4xl font-semibold text-aquamarine sm:text-5xl">
+        Professional Projects
+      </h2>
+      <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-16 tablet:grid-cols-2 xl:grid-cols-3">
+        {professionalProjects.map((project, index) => (
+          <ProjectCard key={`project-${index}`} index={index} {...project} />
+        ))}
+      </div>
+      <h2 className="mt-10 text-4xl font-semibold text-bright-pink sm:text-5xl">
+        Personal Projects
+      </h2>
+      <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-16 tablet:grid-cols-2 xl:grid-cols-3">
+        {personalProjects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
