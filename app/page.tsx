@@ -160,7 +160,7 @@ function Resume() {
       company: 'GSF Car Parts',
       title: 'Software Engineer',
       logo: logoGSF,
-      start: '2022',
+      start: '2023',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
