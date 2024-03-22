@@ -338,11 +338,10 @@ export default function Home() {
               </h1>
               <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
                 {`I’m George Fincher, a fullstack web developer specializing in
-                React and Next.js applications, based in Birmingham, UK. I’m a
-                Junior IT Executive at Aston & Fincher, where I design, develop
-                and implement our internal IT infrastructure and integrate
-                software that serves barbers, hairdressers and beauticians with
-                the products they need across the UK.`}
+                React, Next.js, .NET and Go applications, based in Birmingham, UK. I’m a
+                Software Engineer at GSF Car Parts, where I design, develop
+                and implement our Trade Application, .NET APIs and integrate
+                software that serves mechanics, retail car parts stores and car data providers across the UK.`}
               </p>
               <div className="mt-6 flex gap-6">
                 <SocialLink
