@@ -1,20 +1,23 @@
 import {
-  javascript,
-  typescript,
   html,
   css,
+  javascript,
+  typescript,
+  csharp,
+  golang,
   reactjs,
-  sass,
-  tailwind,
   nextjs,
+  dotnetcore,
+  tailwind,
+  sass,
   nodejs,
   mongodb,
   mysql,
+  threejs,
   git,
   figma,
   illustrator,
   docker,
-  threejs,
 } from '../public/assets';
 
 const technologies = [
@@ -35,12 +38,24 @@ const technologies = [
     icon: typescript,
   },
   {
+    name: 'C#',
+    icon: csharp,
+  },
+  {
+    name: 'Go',
+    icon: golang,
+  },
+  {
     name: 'React JS',
     icon: reactjs,
   },
   {
     name: 'Next JS',
     icon: nextjs,
+  },
+  {
+    name: '.NET Core',
+    icon: dotnetcore,
   },
   {
     name: 'Tailwind CSS',
