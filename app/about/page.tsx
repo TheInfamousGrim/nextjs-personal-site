@@ -85,13 +85,7 @@ export default function About() {
                 Acting.`}
               </p>
               <p>
-                {`The pandemic was brutal, we all know that. It made me rethink
-                acting, so I got three separate jobs in the midst of all the
-                madness. But with determination, grit and vigour I ventured back
-                into the realm of programming.`}
-              </p>
-              <p>
-                {`My programming journey earnestly began in 2020, with my first
+                {`My programming journey earnestly began in 2020, partially due to the pandemic, with my first
                 attempt at learning python. I gave up after a few months due to
                 the 80 hour work weeks and lack of free time...`}
               </p>
@@ -106,6 +100,9 @@ export default function About() {
                 enrolled at a boot camp at the University of Birmingham where I
                 went on to finish top of the class which leads us delightfully
                 to the present.`}
+              </p>
+              <p>
+                {`In 2023 I got a gig as a full stack developer working on NextJS and .NET applications at GSF Car Parts. I've been crucial in the development of our new Trade App and redesigning our APIs to serve our front end and national accounts such as Halfords and Kwik-Fit.`}
               </p>
             </div>
           </div>
